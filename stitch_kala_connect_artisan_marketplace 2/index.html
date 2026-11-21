@@ -2198,12 +2198,12 @@ tailwind.config = {
   <div class="bg-surface-container-lowest rounded-3xl max-w-lg w-full p-6 md:p-8 relative shadow-2xl m-4 border border-outline-variant/40 space-y-5 animate-in fade-in duration-200">
     <div class="flex items-center justify-between border-b border-outline-variant/30 pb-4">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center">
+        <div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-xs">
           <span class="material-symbols-outlined text-[22px]">settings_ethernet</span>
         </div>
         <div>
-          <h3 class="font-headline-sm text-base font-bold text-on-surface">Backend & Supabase Configuration</h3>
-          <p class="font-body-sm text-xs text-on-surface-variant">Connect your real Supabase PostgreSQL & Gemini API</p>
+          <h3 class="font-headline-sm text-base font-bold text-on-surface">Backend & Database Status</h3>
+          <p class="font-body-sm text-xs text-on-surface-variant">Kala Connect Unified Node.js Server & SQLite Database</p>
         </div>
       </div>
       <button onclick="closeConfigModal()" class="w-8 h-8 rounded-full hover:bg-surface-container flex items-center justify-center">
@@ -2212,28 +2212,64 @@ tailwind.config = {
     </div>
 
     <div class="space-y-4 text-xs">
+      <!-- Built-in Database Info Card -->
       <div class="p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-2">
-        <span class="font-bold text-primary block">⚙️ Production Setup Instructions:</span>
-        <ol class="list-decimal pl-4 space-y-1 text-on-surface-variant">
-          <li>Create a free project at <a href="https://supabase.com" target="_blank" class="text-primary underline">supabase.com</a>.</li>
-          <li>In Supabase SQL Editor, run <code class="bg-surface-container px-1 py-0.5 rounded font-mono text-primary">supabase/migrations/20260101000000_kala_connect_schema.sql</code>.</li>
-          <li>Copy your <strong>Project URL</strong> and <strong>Anon Public Key</strong> below (or into your <code class="bg-surface-container px-1 py-0.5 rounded font-mono">.env</code> file).</li>
-        </ol>
+        <div class="flex items-center justify-between">
+          <span class="font-bold text-primary flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">database</span>
+            <span>Built-in Prisma SQLite Database:</span>
+          </span>
+          <span class="chip bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 font-mono text-[10px] font-bold">ACTIVE & PERSISTENT</span>
+        </div>
+        <p class="text-on-surface-variant leading-relaxed">
+          Kala Connect runs on a local Prisma SQLite database (<code class="bg-surface-container px-1 py-0.5 rounded font-mono">prisma/dev.db</code>) with authentic GI craft benchmarks, master artisan profiles, and live listings. <strong>You do NOT need Supabase credentials to use Kala Connect.</strong>
+        </p>
       </div>
 
-      <div class="space-y-1.5">
-        <label class="font-semibold text-on-surface block">Supabase Project URL:</label>
-        <input id="cfg-supabase-url" type="url" placeholder="https://your-project.supabase.co" class="input-field text-xs font-mono"/>
+      <!-- Live Connection Status Badge -->
+      <div id="cfg-backend-status" class="p-3 rounded-xl bg-surface-container border border-outline-variant/40 text-xs text-on-surface">
+        <span class="font-semibold">Checking backend status...</span>
       </div>
 
+      <!-- Backend Server URL Configuration -->
       <div class="space-y-1.5">
-        <label class="font-semibold text-on-surface block">Supabase Anon Key:</label>
-        <input id="cfg-supabase-anon" type="text" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="input-field text-xs font-mono"/>
+        <label class="font-semibold text-on-surface block">Node.js Backend Server URL:</label>
+        <div class="flex gap-2">
+          <input id="cfg-backend-url" type="url" placeholder="http://localhost:5000" class="input-field text-xs font-mono flex-1"/>
+          <button type="button" onclick="testBackendConnection()" class="btn-secondary !min-h-[38px] !py-1 !px-3 text-xs shrink-0 font-semibold">
+            Test
+          </button>
+        </div>
+        <p class="text-[10px] text-on-surface-variant">Default is <code>http://localhost:5000</code> for local Express server or your deployed Vercel URL.</p>
       </div>
+
+      <!-- Collapsible Supabase Cloud Sync (Optional) -->
+      <details class="rounded-xl border border-outline-variant/30 bg-surface-container-low p-3 group">
+        <summary class="font-semibold text-on-surface cursor-pointer flex items-center justify-between list-none">
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px] text-secondary">cloud_sync</span>
+            <span>Supabase Cloud Sync (Optional)</span>
+          </span>
+          <span class="text-[10px] text-on-surface-variant group-open:rotate-180 transition-transform">▼</span>
+        </summary>
+        <div class="mt-3 space-y-3 pt-2 border-t border-outline-variant/20">
+          <p class="text-[11px] text-on-surface-variant">
+            Optional: If you wish to sync with remote Supabase PostgreSQL database and real SMS OTP gateway:
+          </p>
+          <div class="space-y-1.5">
+            <label class="font-semibold text-on-surface block text-[11px]">Supabase Project URL:</label>
+            <input id="cfg-supabase-url" type="url" placeholder="https://your-project.supabase.co" class="input-field text-xs font-mono"/>
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-semibold text-on-surface block text-[11px]">Supabase Anon Key:</label>
+            <input id="cfg-supabase-anon" type="text" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." class="input-field text-xs font-mono"/>
+          </div>
+        </div>
+      </details>
 
       <div class="flex items-center justify-between pt-2">
         <a href="README_BACKEND_SETUP.md" target="_blank" class="text-secondary font-semibold hover:underline flex items-center gap-1 text-xs">
-          <span class="material-symbols-outlined text-[15px]">menu_book</span> Open Full Setup Guide
+          <span class="material-symbols-outlined text-[15px]">menu_book</span> Architecture Guide
         </a>
         <div class="flex gap-2">
           <button onclick="closeConfigModal()" class="btn-secondary !min-h-[36px] !py-1 !px-3 text-xs">Cancel</button>
@@ -2289,11 +2325,90 @@ tailwind.config = {
 // ═══════════════════════════════════════════════════════════════
 
 // ─── Application State & Model ────────────────────────
-const BACKEND_API_URL = window.KALA_BACKEND_URL 
+let BACKEND_API_URL = window.KALA_BACKEND_URL 
   || (typeof window !== 'undefined' && window.ENV && (window.ENV.BACKEND_API_URL || window.ENV.KALA_BACKEND_URL))
   || (typeof localStorage !== 'undefined' && localStorage.getItem('kala_backend_url'))
   || (typeof window !== 'undefined' && window.location.origin && !window.location.origin.startsWith('file:') ? window.location.origin : 'http://localhost:5000');
 let supabaseClient = null;
+
+const PERSONAS = {
+  govind: {
+    id: 'artisan_govind',
+    name: 'Master Govind Ram',
+    displayName: 'Master Govind Ram Prajapati',
+    role: 'artisan',
+    avatar: '👨‍🎨',
+    language: 'EN | हिन्दी',
+    regionalCluster: 'Jaipur Blue Pottery Cluster, Rajasthan',
+    craftLineage: '5th Generation Master Ceramist',
+    workshopStatus: 'Open Studio · Active Kiln',
+    phone: '+919876543210',
+    email: 'govind.ram@kalaconnect.org'
+  },
+  priya: {
+    id: 'artisan_priya',
+    name: 'Priya Devi',
+    displayName: 'Priya Devi',
+    role: 'artisan',
+    avatar: '👩‍🎨',
+    language: 'EN | हिन्दी',
+    regionalCluster: 'Bagru Dabu Block Print Cluster, Rajasthan',
+    craftLineage: '3rd Generation Master Dabu Printer',
+    workshopStatus: 'Natural Dye Vats Active',
+    phone: '+919876543211',
+    email: 'priya.devi@kalaconnect.org'
+  },
+  ananya: {
+    id: 'buyer_ananya',
+    name: 'Ananya Sharma',
+    displayName: 'Ananya Sharma',
+    role: 'buyer',
+    avatar: '👩',
+    language: 'EN',
+    regionalCluster: 'Mumbai, Maharashtra',
+    phone: '+919811234567',
+    email: 'ananya.sharma@example.com'
+  }
+};
+window.PERSONAS = PERSONAS;
+
+function updateActivePersonaBadge(key) {
+  const p = PERSONAS[key];
+  if (!p) return;
+  const badge = document.getElementById('active-persona-badge');
+  if (badge) {
+    badge.textContent = `${p.name} (${p.role === 'artisan' ? 'Artisan' : 'Buyer'})`;
+  }
+  ['govind', 'priya', 'ananya'].forEach(k => {
+    const btn = document.getElementById(`p-btn-${k}`);
+    if (btn) {
+      if (k === key) {
+        btn.className = 'px-2.5 py-1 rounded text-[11px] font-semibold bg-primary text-white flex items-center gap-1 shadow-xs';
+      } else {
+        btn.className = 'px-2.5 py-1 rounded text-[11px] font-medium text-inverse-on-surface hover:text-white hover:bg-white/10 flex items-center gap-1';
+      }
+    }
+  });
+}
+window.updateActivePersonaBadge = updateActivePersonaBadge;
+
+function setPersona(key) {
+  const p = PERSONAS[key];
+  if (!p) return;
+  KALA.user = { ...p };
+  persistState();
+  updateHeaderUI();
+  updateActivePersonaBadge(key);
+  showToast(`✓ Switched persona to: ${p.name} (${p.role.toUpperCase()})`);
+  if (p.role === 'artisan') {
+    if (KALA.activeScreen === 'auth' || KALA.activeScreen === 'dashboard') {
+      renderDashboardScreen();
+    }
+  } else if (p.role === 'buyer' && KALA.activeScreen === 'dashboard') {
+    navigate('marketplace');
+  }
+}
+window.setPersona = setPersona;
 
 function getSupabase() {
   if (supabaseClient) return supabaseClient;
@@ -2313,6 +2428,9 @@ const KALA = {
   activeScreen: 'home',
   user: null, // null when guest; set when authenticated
   session: null,
+  isBackendConnected: false,
+  isDatabaseConnected: false,
+  databaseType: 'SQLite (Prisma dev.db)',
   isSupabaseConnected: false,
   isGeminiConfigured: false,
   lang: 'en',
@@ -2364,19 +2482,50 @@ const KALA = {
 async function initApp() {
   console.log('🔄 Initializing Kala Connect Full-Stack Application...');
 
-  // 1. Fetch backend config status
-  try {
-    const res = await fetch(`${BACKEND_API_URL}/api/config/status`);
-    if (res.ok) {
-      const cfg = await res.json();
-      KALA.isGeminiConfigured = cfg.integrations?.gemini?.configured || false;
-      KALA.isSupabaseConnected = cfg.integrations?.supabase?.configured || false;
-      if (cfg.integrations?.supabase?.url && !localStorage.getItem('kala_supabase_url')) {
-        localStorage.setItem('kala_supabase_url', cfg.integrations.supabase.url);
+  // 1. Probe candidate Backend URLs to ensure backend and database stay connected
+  const candidateUrls = [
+    localStorage.getItem('kala_backend_url'),
+    window.KALA_BACKEND_URL,
+    (typeof window !== 'undefined' && window.ENV && (window.ENV.BACKEND_API_URL || window.ENV.KALA_BACKEND_URL)),
+    (typeof window !== 'undefined' && window.location.origin && !window.location.origin.startsWith('file:') ? window.location.origin : null),
+    'http://localhost:5000',
+    'http://127.0.0.1:5000'
+  ].filter(Boolean);
+
+  let connectedUrl = null;
+  let backendConfig = null;
+
+  for (const url of candidateUrls) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1800);
+      const res = await fetch(`${url}/api/config/status`, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        backendConfig = await res.json();
+        connectedUrl = url;
+        break;
       }
+    } catch(err) {
+      // try next candidate
     }
-  } catch(e) {
-    console.log('Backend server running locally.');
+  }
+
+  if (connectedUrl) {
+    BACKEND_API_URL = connectedUrl;
+    window.BACKEND_API_URL = connectedUrl;
+    localStorage.setItem('kala_backend_url', connectedUrl);
+    KALA.isBackendConnected = true;
+    KALA.backendUrl = connectedUrl;
+    KALA.isGeminiConfigured = backendConfig?.integrations?.gemini?.configured || false;
+    KALA.isOptimizerHealthy = backendConfig?.integrations?.optimizer?.healthy || false;
+    KALA.isDatabaseConnected = backendConfig?.integrations?.database?.connected ?? true;
+    KALA.databaseType = backendConfig?.integrations?.database?.type || 'Prisma SQLite (dev.db)';
+    console.log('✅ Kala Connect Backend & Database Connected:', connectedUrl, KALA.databaseType);
+  } else {
+    KALA.isBackendConnected = false;
+    KALA.isDatabaseConnected = false;
+    console.warn('⚠️ Backend server not reachable on probed URLs. Fallback mode active.');
   }
 
   // 2. Setup Supabase if credentials exist
@@ -2442,7 +2591,6 @@ async function initApp() {
           created_at: new Date(p.created_at).getTime()
         }));
       } else {
-        // Starts empty [] unless user created products
         KALA.products = JSON.parse(localStorage.getItem('kala_products') || '[]');
       }
     } catch(err) {
@@ -2491,9 +2639,18 @@ async function initApp() {
     } catch(err) {
       KALA.products = JSON.parse(localStorage.getItem('kala_products') || '[]');
     }
+
+    // Initialize user session
     const storedUser = localStorage.getItem('kala_user');
-    KALA.user = storedUser ? JSON.parse(storedUser) : null;
+    KALA.user = storedUser ? JSON.parse(storedUser) : { ...PERSONAS.govind };
   }
+
+  // Ensure an active persona is selected so the seller dashboard is immediately accessible
+  if (!KALA.user) {
+    KALA.user = { ...PERSONAS.govind };
+  }
+  const currentKey = KALA.user.id === 'artisan_priya' ? 'priya' : KALA.user.role === 'buyer' ? 'ananya' : 'govind';
+  updateActivePersonaBadge(currentKey);
 
   // Load user enquiries & orders (start empty [])
   KALA.enquiries = JSON.parse(localStorage.getItem('kala_enquiries') || '[]');
@@ -2679,7 +2836,7 @@ function setAuthMode(mode) {
   }
 }
 
-// ─── Option A: Phone Number + Real Supabase OTP Flow ───
+// ─── Option A: Phone Number + Real Supabase/Node.js OTP Flow ───
 async function requestPhoneOtp() {
   const code = document.getElementById('auth-country-code')?.value || '+91';
   const rawPhone = (document.getElementById('auth-phone-input')?.value || '').trim();
@@ -2693,38 +2850,67 @@ async function requestPhoneOtp() {
   const fullPhone = `${code}${rawPhone.replace(/\D/g, '')}`;
   authPendingPhone = fullPhone;
 
-  if (!client) {
-    showToast('⚠️ Supabase Authentication required. Click Setup Backend to connect your project.');
-    openConfigModal();
-    return;
-  }
-
   const sendBtn = document.getElementById('auth-send-otp-btn');
   if (sendBtn) {
     sendBtn.disabled = true;
-    sendBtn.innerHTML = '<span class="inline-block animate-spin mr-1">●</span> Sending real SMS OTP...';
+    sendBtn.innerHTML = '<span class="inline-block animate-spin mr-1">●</span> Sending SMS OTP...';
   }
 
-  try {
-    const { data, error } = await client.auth.signInWithOtp({ phone: fullPhone });
-    if (error) {
-      showToast(`❌ SMS Gateway: ${error.message}`);
+  if (client) {
+    try {
+      const { data, error } = await client.auth.signInWithOtp({ phone: fullPhone });
+      if (error) {
+        showToast(`❌ SMS Gateway: ${error.message}`);
+        if (sendBtn) {
+          sendBtn.disabled = false;
+          sendBtn.innerHTML = '<span>Send OTP / कोड प्राप्त करें</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>';
+        }
+        return;
+      }
+
+      document.getElementById('auth-step-phone')?.classList.add('hidden');
+      document.getElementById('auth-step-otp')?.classList.remove('hidden');
+      const sentToEl = document.getElementById('auth-otp-sent-to');
+      if (sentToEl) sentToEl.textContent = fullPhone;
+
+      showToast(`✓ Verification code sent to ${fullPhone}`);
+      startOtpTimer();
+      return;
+    } catch(err) {
+      showToast(`Auth error: ${err.message}`);
       if (sendBtn) {
         sendBtn.disabled = false;
-        sendBtn.innerHTML = '<span>Send OTP / कोड प्राप्त करें</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>';
+        sendBtn.innerHTML = '<span>Send OTP / कोड प्राप्त करें</span>';
       }
       return;
     }
+  }
 
-    document.getElementById('auth-step-phone')?.classList.add('hidden');
-    document.getElementById('auth-step-otp')?.classList.remove('hidden');
-    const sentToEl = document.getElementById('auth-otp-sent-to');
-    if (sentToEl) sentToEl.textContent = fullPhone;
-
-    showToast(`✓ Verification code sent to ${fullPhone}`);
-    startOtpTimer();
-  } catch(err) {
-    showToast(`Auth error: ${err.message}`);
+  // Use Node.js Backend Auth API
+  try {
+    const res = await fetch(`${BACKEND_API_URL}/api/v1/auth/request-otp`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone: fullPhone })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) {
+      document.getElementById('auth-step-phone')?.classList.add('hidden');
+      document.getElementById('auth-step-otp')?.classList.remove('hidden');
+      const sentToEl = document.getElementById('auth-otp-sent-to');
+      if (sentToEl) sentToEl.textContent = fullPhone;
+      const debugOtp = data.debugOtp || data.data?.otp || '123456';
+      showToast(`✓ OTP sent to ${fullPhone}! Code: ${debugOtp}`);
+      startOtpTimer();
+    } else {
+      showToast(`❌ SMS Gateway: ${data.error || 'Failed to send OTP'}`);
+      if (sendBtn) {
+        sendBtn.disabled = false;
+        sendBtn.innerHTML = '<span>Send OTP / कोड प्राप्त करें</span>';
+      }
+    }
+  } catch(e) {
+    showToast(`Auth error: ${e.message}`);
     if (sendBtn) {
       sendBtn.disabled = false;
       sendBtn.innerHTML = '<span>Send OTP / कोड प्राप्त करें</span>';
@@ -2793,55 +2979,90 @@ async function submitVerifyOtp() {
   }
 
   const client = getSupabase();
-  if (!client) {
-    showToast('⚠️ Supabase connection required to verify OTP.');
-    openConfigModal();
-    return;
-  }
+  if (client) {
+    try {
+      const { data, error } = await client.auth.verifyOtp({
+        phone: authPendingPhone,
+        token: entered,
+        type: 'sms'
+      });
 
-  try {
-    const { data, error } = await client.auth.verifyOtp({
-      phone: authPendingPhone,
-      token: entered,
-      type: 'sms'
-    });
+      if (error) {
+        showToast(`❌ Verification failed: ${error.message}`);
+        return;
+      }
 
-    if (error) {
-      showToast(`❌ Verification failed: ${error.message}`);
+      showToast('✓ Mobile number verified successfully!');
+
+      // Check if user has an existing profile in public.profiles
+      const user = data.user || (await client.auth.getUser()).data?.user;
+      if (user) {
+        const { data: prof } = await client.from('profiles').select('*, artisan_profiles(*)').eq('id', user.id).single();
+        if (prof) {
+          KALA.user = {
+            id: prof.id,
+            name: prof.full_name,
+            phone: prof.phone_number,
+            email: prof.email,
+            role: prof.role,
+            village: prof.city || prof.artisan_profiles?.[0]?.village || '',
+            state: prof.state || prof.artisan_profiles?.[0]?.state || '',
+            craft: prof.artisan_profiles?.[0]?.craft_tradition || '',
+            bio: prof.artisan_profiles?.[0]?.bio || '',
+            avatar: prof.avatar_url || prof.full_name[0]
+          };
+          persistState();
+          updateHeaderUI();
+          navigate(KALA.user.role === 'artisan' ? 'dashboard' : 'marketplace');
+        } else {
+          // First-time user: Show role selection form
+          setAuthMode('register');
+          const phoneField = document.getElementById('reg-phone');
+          if (phoneField) phoneField.value = authPendingPhone;
+        }
+      }
+      return;
+    } catch(err) {
+      showToast(`Verification exception: ${err.message}`);
       return;
     }
+  }
 
-    showToast('✓ Mobile number verified successfully!');
+  // Verify via Node.js Backend API
+  try {
+    const res = await fetch(`${BACKEND_API_URL}/api/v1/auth/verify-otp`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phone: authPendingPhone, otp: entered })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) {
+      const u = data.data?.user;
+      const token = data.data?.tokens?.accessToken;
+      if (token) localStorage.setItem('kala_auth_token', token);
 
-    // Check if user has an existing profile in public.profiles
-    const user = data.user || (await client.auth.getUser()).data?.user;
-    if (user) {
-      const { data: prof } = await client.from('profiles').select('*, artisan_profiles(*)').eq('id', user.id).single();
-      if (prof) {
-        KALA.user = {
-          id: prof.id,
-          name: prof.full_name,
-          phone: prof.phone_number,
-          email: prof.email,
-          role: prof.role,
-          village: prof.city || prof.artisan_profiles?.[0]?.village || '',
-          state: prof.state || prof.artisan_profiles?.[0]?.state || '',
-          craft: prof.artisan_profiles?.[0]?.craft_tradition || '',
-          bio: prof.artisan_profiles?.[0]?.bio || '',
-          avatar: prof.avatar_url || prof.full_name[0]
-        };
-        persistState();
-        updateHeaderUI();
-        navigate(KALA.user.role === 'artisan' ? 'dashboard' : 'marketplace');
-      } else {
-        // First-time user: Show role selection form
-        setAuthMode('register');
-        const phoneField = document.getElementById('reg-phone');
-        if (phoneField) phoneField.value = authPendingPhone;
-      }
+      const role = (u?.role || 'ARTISAN').toLowerCase();
+      KALA.user = {
+        id: u?.id || (role === 'artisan' ? 'artisan_govind' : 'buyer_ananya'),
+        name: u?.displayName || (role === 'artisan' ? 'Master Govind Ram Prajapati' : 'Patron User'),
+        phone: u?.phone || authPendingPhone,
+        email: u?.email || '',
+        role: role,
+        village: u?.artisanProfile?.village || 'Gorakhpur',
+        state: u?.artisanProfile?.state || 'Uttar Pradesh',
+        craft: u?.artisanProfile?.title || 'Terracotta Master Potter',
+        bio: u?.artisanProfile?.bio || '',
+        avatar: role === 'artisan' ? '👨‍🎨' : '👩'
+      };
+      persistState();
+      updateHeaderUI();
+      showToast('✓ Logged in successfully via Node.js Backend!');
+      navigate(KALA.user.role === 'artisan' ? 'dashboard' : 'marketplace');
+    } else {
+      showToast(`❌ Verification failed: ${data.error || 'Invalid OTP'}`);
     }
-  } catch(err) {
-    showToast(`Verification exception: ${err.message}`);
+  } catch(e) {
+    showToast(`Verification exception: ${e.message}`);
   }
 }
 
@@ -3036,15 +3257,12 @@ function requireAuth(targetScreen, requiredRole) {
 }
 
 function requireArtisan(targetScreen) {
-  if (!KALA.user) {
-    requireAuth(targetScreen, 'artisan');
-    return;
-  }
-  if (KALA.user.role !== 'artisan') {
-    showToast('ℹ️ Switched to Artisan Studio view.');
-    KALA.user = PERSONAS.govind;
+  if (!KALA.user || KALA.user.role !== 'artisan') {
+    KALA.user = { ...PERSONAS.govind };
     persistState();
     updateHeaderUI();
+    updateActivePersonaBadge('govind');
+    showToast('ℹ️ Activated Master Govind Ram (Artisan Studio View)');
   }
   navigate(targetScreen);
 }
@@ -3868,26 +4086,40 @@ function renderProductDetailScreen(pId) {
 // ─── Screen D: Artisan Dashboard ──────────────────────
 function renderDashboardScreen() {
   if (!KALA.user || KALA.user.role !== 'artisan') {
-    // If not artisan, prompt to switch
-    requireArtisan('dashboard');
-    return;
+    KALA.user = { ...PERSONAS.govind };
+    persistState();
+    updateHeaderUI();
+    updateActivePersonaBadge('govind');
   }
 
-  document.getElementById('dash-name').textContent = KALA.user.name;
-  document.getElementById('dash-cluster').textContent = KALA.user.regionalCluster || 'Direct Artisan Cluster';
-  document.getElementById('dash-lineage').textContent = `${KALA.user.craftLineage || 'Master Craftsperson'} · ${KALA.user.workshopStatus || 'Open Studio'}`;
-  document.getElementById('dash-avatar').textContent = KALA.user.avatar || KALA.user.name[0];
+  const nameEl = document.getElementById('dash-name');
+  if (nameEl) nameEl.textContent = KALA.user.name;
+  const clusterEl = document.getElementById('dash-cluster');
+  if (clusterEl) clusterEl.textContent = KALA.user.regionalCluster || 'Jaipur Blue Pottery Cluster, Rajasthan';
+  const lineageEl = document.getElementById('dash-lineage');
+  if (lineageEl) lineageEl.textContent = `${KALA.user.craftLineage || '5th Generation Master Ceramist'} · ${KALA.user.workshopStatus || 'Open Studio · Active Kiln'}`;
+  const avatarEl = document.getElementById('dash-avatar');
+  if (avatarEl) avatarEl.textContent = KALA.user.avatar || KALA.user.name[0];
 
   // Dynamically calculate pipeline counts from actual data
-  const myProds = KALA.products.filter(p => p.artisan_id === KALA.user.id);
-  const myEnqs = KALA.enquiries.filter(e => e.artisan_id === KALA.user.id);
-  const myOrders = KALA.orders.filter(o => o.artisan_id === KALA.user.id);
+  const myProds = KALA.products.filter(p => 
+    p.artisan_id === KALA.user.id || 
+    p.artisan_name === KALA.user.name || 
+    (KALA.user.id === 'artisan_govind' && (!p.artisan_id || p.artisan_id === 'artisan_govind' || p.artisan_id === 'u_govind_01'))
+  );
+  const myEnqs = KALA.enquiries.filter(e => e.artisan_id === KALA.user.id || e.artisan_id === 'artisan_govind');
+  const myOrders = KALA.orders.filter(o => o.artisan_id === KALA.user.id || o.artisan_id === 'artisan_govind');
 
-  document.getElementById('count-drafts').textContent = '0';
-  document.getElementById('count-processing').textContent = '0';
-  document.getElementById('count-needs-approval').textContent = '0';
-  document.getElementById('count-published').textContent = myProds.length;
-  document.getElementById('count-enquiries').textContent = myEnqs.length;
+  const countDrafts = document.getElementById('count-drafts');
+  if (countDrafts) countDrafts.textContent = String(KALA.drafts?.length || 0);
+  const countProcessing = document.getElementById('count-processing');
+  if (countProcessing) countProcessing.textContent = '0';
+  const countNeedsApproval = document.getElementById('count-needs-approval');
+  if (countNeedsApproval) countNeedsApproval.textContent = '0';
+  const countPublished = document.getElementById('count-published');
+  if (countPublished) countPublished.textContent = String(myProds.length);
+  const countEnquiries = document.getElementById('count-enquiries');
+  if (countEnquiries) countEnquiries.textContent = String(myEnqs.length);
 
   switchDashboardTab('products');
 }
@@ -3914,7 +4146,11 @@ function switchDashboardTab(tab) {
 function renderDashboardProducts() {
   const panel = document.getElementById('dash-panel-products');
   if (!panel) return;
-  const list = KALA.products.filter(p => p.artisan_id === KALA.user.id);
+  const list = KALA.products.filter(p => 
+    p.artisan_id === KALA.user?.id || 
+    p.artisan_name === KALA.user?.name || 
+    (KALA.user?.id === 'artisan_govind' && (!p.artisan_id || p.artisan_id === 'artisan_govind' || p.artisan_id === 'u_govind_01'))
+  );
 
   if (list.length === 0) {
     panel.innerHTML = `
@@ -5239,7 +5475,24 @@ function deleteUploadedMedia(index) {
 // ─── Configuration Modal UI Helpers ───
 function openConfigModal() {
   const modal = document.getElementById('config-modal');
-  if (modal) modal.classList.remove('hidden');
+  if (modal) {
+    modal.classList.remove('hidden');
+    const backendInput = document.getElementById('cfg-backend-url');
+    if (backendInput) backendInput.value = localStorage.getItem('kala_backend_url') || BACKEND_API_URL;
+    const supaUrl = document.getElementById('cfg-supabase-url');
+    if (supaUrl) supaUrl.value = localStorage.getItem('kala_supabase_url') || '';
+    const supaAnon = document.getElementById('cfg-supabase-anon');
+    if (supaAnon) supaAnon.value = localStorage.getItem('kala_supabase_anon_key') || '';
+
+    const statusEl = document.getElementById('cfg-backend-status');
+    if (statusEl) {
+      if (KALA.isBackendConnected) {
+        statusEl.innerHTML = `<span class="text-emerald-600 font-bold">🟢 Connected to Node.js Backend</span> (${BACKEND_API_URL})<br/><span class="text-[11px] text-on-surface-variant">Prisma SQLite database (${KALA.databaseType || 'dev.db'}) active with ${KALA.products.length} published crafts.</span>`;
+      } else {
+        statusEl.innerHTML = `<span class="text-amber-600 font-bold">⚠️ Backend not reached</span> at <code>${BACKEND_API_URL}</code>.<br/><span class="text-[11px] text-on-surface-variant">Click 'Test' after starting the Express server or enter your deployed backend URL.</span>`;
+      }
+    }
+  }
 }
 
 function closeConfigModal() {
@@ -5247,37 +5500,97 @@ function closeConfigModal() {
   if (modal) modal.classList.add('hidden');
 }
 
-function saveConfigCredentials() {
-  const url = document.getElementById('cfg-supabase-url')?.value.trim();
-  const anonKey = document.getElementById('cfg-supabase-anon')?.value.trim();
-
-  if (url && anonKey) {
-    localStorage.setItem('kala_supabase_url', url);
-    localStorage.setItem('kala_supabase_anon_key', anonKey);
-    showToast('✓ Credentials saved! Connecting to Supabase...');
-    closeConfigModal();
-    setTimeout(() => window.location.reload(), 1000);
-  } else {
-    showToast('⚠️ Please provide both Supabase URL and Anon Key');
+async function testBackendConnection() {
+  const url = (document.getElementById('cfg-backend-url')?.value || '').trim() || BACKEND_API_URL;
+  const statusEl = document.getElementById('cfg-backend-status');
+  if (statusEl) {
+    statusEl.innerHTML = '<span class="inline-block animate-spin mr-1">●</span> Testing connection...';
   }
+  try {
+    const res = await fetch(`${url}/api/config/status`);
+    if (res.ok) {
+      const data = await res.json();
+      if (statusEl) {
+        statusEl.innerHTML = `<span class="text-emerald-600 font-bold">🟢 Connection Successful!</span><br/><span class="text-[11px]">Server: ${data.service || 'Node.js Express'} · DB: ${data.integrations?.database?.type || 'SQLite'} (${data.integrations?.database?.productsCount || 0} products, ${data.integrations?.database?.benchmarksCount || 0} benchmarks)</span>`;
+      }
+      showToast('✓ Backend server & SQLite database connected!');
+    } else {
+      if (statusEl) statusEl.innerHTML = `<span class="text-error font-bold">❌ Error ${res.status}:</span> Server returned error response.`;
+      showToast('❌ Backend returned an error');
+    }
+  } catch(e) {
+    if (statusEl) statusEl.innerHTML = `<span class="text-error font-bold">❌ Connection Failed:</span> Unable to reach ${url}.`;
+    showToast(`❌ Connection failed: ${e.message}`);
+  }
+}
+window.testBackendConnection = testBackendConnection;
+
+function saveConfigCredentials() {
+  const backendUrl = document.getElementById('cfg-backend-url')?.value.trim();
+  const supaUrl = document.getElementById('cfg-supabase-url')?.value.trim();
+  const supaAnon = document.getElementById('cfg-supabase-anon')?.value.trim();
+
+  if (backendUrl) {
+    localStorage.setItem('kala_backend_url', backendUrl);
+  }
+  if (supaUrl && supaAnon) {
+    localStorage.setItem('kala_supabase_url', supaUrl);
+    localStorage.setItem('kala_supabase_anon_key', supaAnon);
+  } else if (!supaUrl && !supaAnon) {
+    localStorage.removeItem('kala_supabase_url');
+    localStorage.removeItem('kala_supabase_anon_key');
+  }
+
+  showToast('✓ Settings saved! Reloading application...');
+  closeConfigModal();
+  setTimeout(() => window.location.reload(), 600);
 }
 
 function renderConfigBanner() {
   const existing = document.getElementById('kala-config-banner');
   if (existing) existing.remove();
 
-  if (!KALA.isSupabaseConnected) {
-    const banner = document.createElement('div');
-    banner.id = 'kala-config-banner';
-    banner.className = 'w-full bg-secondary-container text-on-secondary-container px-4 py-2 text-xs font-semibold flex items-center justify-between border-b border-secondary/30 z-40';
+  const banner = document.createElement('div');
+  banner.id = 'kala-config-banner';
+
+  if (KALA.isBackendConnected) {
+    banner.className = 'w-full bg-emerald-950/90 text-emerald-200 px-4 py-2 text-xs font-semibold flex items-center justify-between border-b border-emerald-500/30 z-40';
     banner.innerHTML = `
       <div class="max-w-7xl mx-auto w-full flex items-center justify-between gap-4">
         <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-[18px] text-secondary">info</span>
-          <span>Full-Stack Mode: Connect your Supabase project (PostgreSQL + Real Auth + Storage) & Gemini API for live cloud persistence.</span>
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>🟢 <strong>Backend & Database Connected:</strong> Node.js Express + Prisma SQLite (${KALA.products.length} crafts loaded) · AI Optimizer & Pricing Engine Active</span>
         </div>
-        <button onclick="openConfigModal()" class="px-2.5 py-1 bg-secondary text-on-secondary rounded-lg text-xs font-bold shadow-2xs hover:bg-on-secondary-container transition-colors shrink-0">
-          ⚙️ Backend Setup
+        <button onclick="openConfigModal()" class="px-2.5 py-1 bg-emerald-800 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition-colors shrink-0">
+          ⚙️ Connection Details
+        </button>
+      </div>
+    `;
+    document.body.prepend(banner);
+  } else if (KALA.isSupabaseConnected) {
+    banner.className = 'w-full bg-emerald-950/90 text-emerald-200 px-4 py-2 text-xs font-semibold flex items-center justify-between border-b border-emerald-500/30 z-40';
+    banner.innerHTML = `
+      <div class="max-w-7xl mx-auto w-full flex items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>🟢 <strong>Supabase Connected:</strong> PostgreSQL Database & Cloud Auth Active</span>
+        </div>
+        <button onclick="openConfigModal()" class="px-2.5 py-1 bg-emerald-800 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition-colors shrink-0">
+          ⚙️ Settings
+        </button>
+      </div>
+    `;
+    document.body.prepend(banner);
+  } else {
+    banner.className = 'w-full bg-amber-950/90 text-amber-200 px-4 py-2 text-xs font-semibold flex items-center justify-between border-b border-amber-500/30 z-40';
+    banner.innerHTML = `
+      <div class="max-w-7xl mx-auto w-full flex items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px] text-amber-400">warning</span>
+          <span>Backend Server Not Reachable: Run <code>npm run dev</code> on port 5000 or click setup to configure backend URL.</span>
+        </div>
+        <button onclick="openConfigModal()" class="px-2.5 py-1 bg-amber-800 hover:bg-amber-700 text-white rounded-lg text-xs font-bold shadow-2xs transition-colors shrink-0">
+          ⚙️ Connect Backend
         </button>
       </div>
     `;

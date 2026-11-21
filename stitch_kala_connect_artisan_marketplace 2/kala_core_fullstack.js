@@ -3,10 +3,89 @@
 // Real Supabase Auth, PostgreSQL RLS, Storage, & Gemini AI
 // ═══════════════════════════════════════════════════════════════
 
-const BACKEND_API_URL = window.KALA_BACKEND_URL 
+let BACKEND_API_URL = window.KALA_BACKEND_URL 
   || (typeof window !== 'undefined' && window.ENV && (window.ENV.BACKEND_API_URL || window.ENV.KALA_BACKEND_URL))
   || (typeof localStorage !== 'undefined' && localStorage.getItem('kala_backend_url'))
   || (typeof window !== 'undefined' && window.location.origin && !window.location.origin.startsWith('file:') ? window.location.origin : 'http://localhost:5000');
+
+const PERSONAS = {
+  govind: {
+    id: 'artisan_govind',
+    name: 'Master Govind Ram',
+    displayName: 'Master Govind Ram Prajapati',
+    role: 'artisan',
+    avatar: '👨‍🎨',
+    language: 'EN | हिन्दी',
+    regionalCluster: 'Jaipur Blue Pottery Cluster, Rajasthan',
+    craftLineage: '5th Generation Master Ceramist',
+    workshopStatus: 'Open Studio · Active Kiln',
+    phone: '+919876543210',
+    email: 'govind.ram@kalaconnect.org'
+  },
+  priya: {
+    id: 'artisan_priya',
+    name: 'Priya Devi',
+    displayName: 'Priya Devi',
+    role: 'artisan',
+    avatar: '👩‍🎨',
+    language: 'EN | हिन्दी',
+    regionalCluster: 'Bagru Dabu Block Print Cluster, Rajasthan',
+    craftLineage: '3rd Generation Master Dabu Printer',
+    workshopStatus: 'Natural Dye Vats Active',
+    phone: '+919876543211',
+    email: 'priya.devi@kalaconnect.org'
+  },
+  ananya: {
+    id: 'buyer_ananya',
+    name: 'Ananya Sharma',
+    displayName: 'Ananya Sharma',
+    role: 'buyer',
+    avatar: '👩',
+    language: 'EN',
+    regionalCluster: 'Mumbai, Maharashtra',
+    phone: '+919811234567',
+    email: 'ananya.sharma@example.com'
+  }
+};
+window.PERSONAS = PERSONAS;
+
+function updateActivePersonaBadge(key) {
+  const p = PERSONAS[key];
+  if (!p) return;
+  const badge = document.getElementById('active-persona-badge');
+  if (badge) {
+    badge.textContent = `${p.name} (${p.role === 'artisan' ? 'Artisan' : 'Buyer'})`;
+  }
+  ['govind', 'priya', 'ananya'].forEach(k => {
+    const btn = document.getElementById(`p-btn-${k}`);
+    if (btn) {
+      if (k === key) {
+        btn.className = 'px-2.5 py-1 rounded text-[11px] font-semibold bg-primary text-white flex items-center gap-1 shadow-xs';
+      } else {
+        btn.className = 'px-2.5 py-1 rounded text-[11px] font-medium text-inverse-on-surface hover:text-white hover:bg-white/10 flex items-center gap-1';
+      }
+    }
+  });
+}
+window.updateActivePersonaBadge = updateActivePersonaBadge;
+
+function setPersona(key) {
+  const p = PERSONAS[key];
+  if (!p) return;
+  KALA.user = { ...p };
+  if (typeof persistState === 'function') persistState();
+  if (typeof updateHeaderUI === 'function') updateHeaderUI();
+  updateActivePersonaBadge(key);
+  if (typeof showToast === 'function') showToast(`✓ Switched persona to: ${p.name} (${p.role.toUpperCase()})`);
+  if (p.role === 'artisan') {
+    if (KALA.activeScreen === 'auth' || KALA.activeScreen === 'dashboard') {
+      if (typeof renderDashboardScreen === 'function') renderDashboardScreen();
+    }
+  } else if (p.role === 'buyer' && KALA.activeScreen === 'dashboard') {
+    if (typeof navigate === 'function') navigate('marketplace');
+  }
+}
+window.setPersona = setPersona;
 
 // ─── Application State ───────────────────────────────────────
 const KALA = {
@@ -14,6 +93,9 @@ const KALA = {
   user: null,          // Real authenticated user profile
   session: null,       // Supabase auth session
   supabase: null,      // Live Supabase Client instance
+  isBackendConnected: false,
+  isDatabaseConnected: false,
+  databaseType: 'SQLite (Prisma dev.db)',
   isSupabaseConnected: false,
   isGeminiConfigured: false,
   products: [],        // Live products from database
