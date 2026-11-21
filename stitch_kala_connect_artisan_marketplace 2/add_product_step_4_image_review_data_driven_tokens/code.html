@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fcf8ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface-variant": "#404849", "on-primary-fixed": "#001f23", "inverse-on-surface": "#f1efff", "secondary": "#765a22", "secondary-fixed-dim": "#e7c17f", "surface-container-high": "#e7e6ff", "surface-dim": "#d8d7f8", "surface-tint": "#37656b", "on-secondary-container": "#795c25", "tertiary": "#516351", "surface-bright": "#fcf8ff", "secondary-fixed": "#ffdea7", "primary": "#37656b", "error-container": "#ffdad6", "tertiary-fixed-dim": "#b8ccb6", "outline-variant": "#c0c8c9", "surface": "#fcf8ff", "primary-fixed-dim": "#9fcfd5", "on-tertiary-container": "#2a3b2b", "on-background": "#181932", "on-primary-container": "#053d43", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "primary-container": "#79a8ae", "primary-fixed": "#baebf1", "outline": "#70797a", "on-tertiary-fixed": "#0f1f11", "on-secondary-fixed": "#271900", "on-secondary": "#ffffff", "on-error-container": "#93000a", "tertiary-container": "#92a590", "on-tertiary-fixed-variant": "#3a4b3a", "background": "#fcf8ff", "surface-variant": "#e1e0ff", "secondary-container": "#ffd793", "inverse-surface": "#2d2e48", "on-primary": "#ffffff", "on-surface": "#181932", "tertiary-fixed": "#d4e8d1", "inverse-primary": "#9fcfd5", "surface-container-highest": "#e1e0ff", "on-secondary-fixed-variant": "#5c420c", "surface-container-low": "#f5f2ff", "on-error": "#ffffff", "surface-container": "#eeecff", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#1c4d53" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "gutter": "1rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "margin-desktop": "2rem", "margin": "1rem", "space-md": "1rem" }, fontFamily: { "display-lg-mobile": ["Noto Serif"], "label-md": ["Inter"], "headline-lg-mobile": ["Noto Serif"], "headline-sm": ["Noto Serif"], "label-lg": ["Inter"], "headline-md": ["Noto Serif"], "body-md": ["Inter"], "label-sm": ["Inter"], "display-lg": ["Noto Serif"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Noto Serif"] }, fontSize: { "display-lg-mobile": ["30px", { lineHeight: "38px", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "30px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", fontWeight: "600" }], "display-lg": ["40px", { lineHeight: "52px", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed">
+<!-- Top Header Navigation -->
+<header class="fixed top-0 w-full z-50 pt-safe bg-surface/95 backdrop-blur-xl shadow-[0_1px_12px_rgba(24,25,50,0.06)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go back" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0"><h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight truncate">Add product, step 4 of 5: Image review</h1><div class="flex items-center gap-1.5"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span><span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide">Step 4 of 5 (फ़ोटो समीक्षा / Image Review)</span></div></div></div><div class="flex items-center gap-space-xs shrink-0"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[10px] uppercase font-bold tracking-wider">DB: imageReviewState</span></div></div><div class="w-full h-1 bg-surface-container"><div class="h-full bg-primary rounded-r-full transition-all duration-300 w-4/5"></div></div></header>
+<main class="flex-1 flex flex-col relative w-full pt-24 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full gap-space-md px-margin pb-space-lg">
+<!-- 1. Stepper & Tokenized Context Bar -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Step 4 of 5: Image Review</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">{{review.selectedCount}} of {{review.candidateCount}} selected</span>
+</div>
+<!-- Progress Pills: 1 Facts (done), 2 Video (done), 3 AI Process (done), 4 Review (active), 5 Draft & publish (upcoming) -->
+<div class="flex items-center gap-1.5 overflow-x-auto py-1">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>1. Facts</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>2. Video</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>3. AI Process</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shrink-0 shadow-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+<span>4. Review</span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0">
+<span>5. Draft &amp; Publish</span>
+</div>
+</div>
+<!-- Context Chips Tokenized -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-medium">
+  {{review.selectedCount}} of {{review.candidateCount}} candidates selected
+</span>
+<span class="text-on-surface-variant text-[12px]">•</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest text-on-surface font-label-sm text-label-sm">
+  From {{video.frameCount}} frames
+</span>
+<span class="text-on-surface-variant text-[12px]">•</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed-dim text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+  K = {{review.k}}
+</span>
+</div>
+<span class="text-[11px] text-on-surface-variant italic">[Example: 5 of 12 candidates, 180 frames, K=5]</span>
+</div>
+</section>
+<!-- 2. Light Editing & Privacy Notice (Headline removed, tooltip/explainer kept, privacy note added) -->
+<section class="bg-surface-container-low border border-outline-variant/60 rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">tune</span>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<p class="font-label-md text-label-md text-on-surface font-semibold">Original frames are kept. Edits are light: crop, exposure, colour balance.</p>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer" title="We preserve your authentic handmade craft textures without artificial generative distortion.">info</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+Original video and frames are kept. Nothing is published until you approve.
+</p>
+</div>
+</div>
+<!-- Global Original vs Enhanced Toggle -->
+<div class="flex items-center justify-between bg-surface-container-lowest rounded-lg p-1.5 border border-outline-variant/40 mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant pl-2">Preview Mode:</span>
+<div class="flex items-center gap-1 bg-surface-container rounded-md p-0.5" id="global-mode-toggle">
+<button class="px-3 py-1 rounded font-label-sm text-label-sm text-on-surface-variant transition-colors" data-global-mode="original" type="button">
+Original
+</button>
+<button class="px-3 py-1 rounded font-label-sm text-label-sm bg-primary text-on-primary shadow-sm transition-colors" data-global-mode="enhanced" type="button">
+Enhanced
+</button>
+</div>
+</div>
+</section>
+<!-- 3. Dynamic Region: Selected Craft Photos (DB: selectedImages) with Neutral Grey Placeholders -->
+<section class="flex flex-col gap-space-md" id="selected-photos-container">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Selected Craft Photos</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[10px] uppercase font-bold">DB: selectedImages</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold" id="accepted-count-badge">{{review.selectedCount}} Accepted</span>
+</div>
+<!-- Card 1: Hero Card (Placeholder, Conditional Top Pick, Tokenized Details) -->
+<article class="photo-card bg-surface-container-lowest border border-outline-variant/50 rounded-xl overflow-hidden shadow-sm flex flex-col" data-card-id="1" data-mode="enhanced" data-status="accepted">
+<!-- Neutral grey placeholder box -->
+<div class="relative w-full aspect-[4/3] bg-surface-container-high flex flex-col items-center justify-center p-4 border-b border-outline-variant/40 text-center">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest flex items-center justify-center text-primary mb-2 shadow-inner">
+<span class="material-symbols-outlined text-[32px]">image</span>
+</div>
+<code class="text-xs font-mono text-on-surface bg-surface-container px-2 py-1 rounded font-semibold">{{image.imageUrl}}</code>
+<span class="text-[11px] text-on-surface-variant mt-1">Example Image • Front View Frame</span>
+<!-- Corner badges -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-inverse-surface/85 text-inverse-on-surface font-label-sm text-label-sm backdrop-blur-sm">
+      {{image.label}} [e.g. #1 Hero • Front View]
+    </span>
+</div>
+<button class="card-mode-btn absolute top-3 right-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 text-on-surface font-label-sm text-label-sm shadow-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">auto_fix_high</span>
+<span class="mode-label">Enhanced</span>
+</button>
+<div class="status-overlay hidden absolute inset-0 bg-error-container/60 backdrop-blur-[2px] flex items-center justify-center">
+<span class="px-4 py-1.5 rounded-full bg-error text-on-error font-label-lg text-label-lg shadow-md">Rejected</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+    {{image.reason}} [e.g. Sharp, full shape]
+  </span>
+<!-- Conditional Top Pick Token -->
+<div class="flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+      {{#if image.isTopPick}} Top pick {{/if}}
+    </span>
+<span class="text-[10px] text-on-surface-variant italic">(Shown only when top pick)</span>
+</div>
+</div>
+<!-- Score Grid -->
+<div class="grid grid-cols-4 gap-2 bg-surface-container-low rounded-lg p-2.5 text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quality</span>
+<span class="font-label-lg text-label-lg text-primary font-semibold">{{image.qualityScore}}%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Coverage</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">{{image.coverageScore}}%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Diversity</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">{{image.diversityScore}}%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Status</span>
+<span class="font-label-lg text-label-lg text-tertiary font-semibold uppercase text-xs mt-0.5">{{image.status}}</span>
+</div>
+</div>
+<!-- Large Tap-Target Controls -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<button class="btn-accept h-11 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1 shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Accept</span>
+</button>
+<button class="btn-reject h-11 rounded-lg bg-surface-container text-on-surface-variant hover:bg-error-container hover:text-on-error-container font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Reject</span>
+</button>
+<button class="btn-replace h-11 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+<span>Replace</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Cards 2-3 in 2-column mobile grid adhering to neutral placeholder boxes & token template -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Card 2 -->
+<article class="photo-card bg-surface-container-lowest border border-outline-variant/40 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between" data-card-id="2" data-mode="enhanced" data-status="accepted">
+<div class="relative w-full aspect-square bg-surface-container flex flex-col items-center justify-center p-3 text-center border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-[28px] text-outline mb-1">image</span>
+<code class="text-[10px] font-mono text-on-surface-variant truncate max-w-full px-1">{{image.imageUrl}}</code>
+<span class="text-[10px] text-on-surface-variant">Example Image</span>
+<button class="card-mode-btn absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/90 text-on-surface font-label-sm text-label-sm shadow-sm" type="button">
+<span class="mode-label">Enhanced</span>
+</button>
+<div class="status-overlay hidden absolute inset-0 bg-error-container/60 backdrop-blur-[2px] flex items-center justify-center">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm">Rejected</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col gap-1.5">
+<span class="font-label-md text-label-md text-on-surface truncate">{{image.label}} [Side Silhouette]</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[11px] w-fit truncate">{{image.reason}}</span>
+<div class="grid grid-cols-3 gap-1 text-[11px] text-on-surface-variant bg-surface-container-low rounded px-1.5 py-1 text-center font-mono">
+<span>Q:{{image.qualityScore}}%</span>
+<span>C:{{image.coverageScore}}%</span>
+<span>D:{{image.diversityScore}}%</span>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-1">
+<button aria-label="Accept" class="btn-accept h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">check</span></button>
+<button aria-label="Reject" class="btn-reject h-9 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button>
+<button aria-label="Replace" class="btn-replace h-9 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span></button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="photo-card bg-surface-container-lowest border border-outline-variant/40 rounded-xl overflow-hidden shadow-sm flex flex-col justify-between" data-card-id="3" data-mode="enhanced" data-status="accepted">
+<div class="relative w-full aspect-square bg-surface-container flex flex-col items-center justify-center p-3 text-center border-b border-outline-variant/30">
+<span class="material-symbols-outlined text-[28px] text-outline mb-1">image</span>
+<code class="text-[10px] font-mono text-on-surface-variant truncate max-w-full px-1">{{image.imageUrl}}</code>
+<span class="text-[10px] text-on-surface-variant">Example Image</span>
+<button class="card-mode-btn absolute top-2 right-2 px-2 py-0.5 rounded-full bg-surface-container-lowest/90 text-on-surface font-label-sm text-label-sm shadow-sm" type="button">
+<span class="mode-label">Enhanced</span>
+</button>
+<div class="status-overlay hidden absolute inset-0 bg-error-container/60 backdrop-blur-[2px] flex items-center justify-center">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm">Rejected</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col gap-1.5">
+<span class="font-label-md text-label-md text-on-surface truncate">{{image.label}} [Glaze Detail]</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] w-fit truncate">{{image.reason}}</span>
+<div class="grid grid-cols-3 gap-1 text-[11px] text-on-surface-variant bg-surface-container-low rounded px-1.5 py-1 text-center font-mono">
+<span>Q:{{image.qualityScore}}%</span>
+<span>C:{{image.coverageScore}}%</span>
+<span>D:{{image.diversityScore}}%</span>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-1">
+<button aria-label="Accept" class="btn-accept h-9 rounded-lg bg-primary text-on-primary flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">check</span></button>
+<button aria-label="Reject" class="btn-reject h-9 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">close</span></button>
+<button aria-label="Replace" class="btn-replace h-9 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span></button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 4. All Candidates Tray (DB: candidateFrames) -->
+<section class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-sm overflow-hidden">
+<button class="w-full px-space-md py-3.5 flex items-center justify-between text-left bg-surface-container-low hover:bg-surface-container transition-colors" id="candidates-toggle" type="button">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[20px] text-primary">burst_mode</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">All Candidates (Tray) ({{review.candidateCount}})</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[10px] uppercase font-bold">DB: candidateFrames</span>
+</div>
+<span class="material-symbols-outlined text-[22px] text-on-surface-variant transition-transform duration-200" id="candidates-chevron">expand_more</span>
+</button>
+<div class="px-space-md py-space-sm flex flex-col gap-2" id="candidates-tray">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+  Container: <code class="font-mono text-xs text-primary">{{#each candidates}}</code> • Tap any frame to swap into selection.
+</p>
+<div class="flex items-center gap-2.5 overflow-x-auto pb-2 pt-1">
+<!-- Candidate Frame 1 -->
+<button class="candidate-thumb shrink-0 w-24 flex flex-col gap-1 text-left group" type="button">
+<div class="w-24 h-24 rounded-lg bg-surface-container-high border border-outline-variant/60 flex flex-col items-center justify-center relative p-1 text-center">
+<span class="material-symbols-outlined text-[20px] text-outline">image</span>
+<span class="text-[9px] font-mono text-on-surface-variant break-all">{{candidate.imageUrl}}</span>
+<span class="absolute top-1 left-1 px-1 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-[10px]">{{candidate.timestamp}}</span>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-semibold">Rank #{{candidate.rank}}</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">00:03.4 • Rank #1</span>
+</button>
+<!-- Candidate Frame 2 -->
+<button class="candidate-thumb shrink-0 w-24 flex flex-col gap-1 text-left group" type="button">
+<div class="w-24 h-24 rounded-lg bg-surface-container-high border border-outline-variant/60 flex flex-col items-center justify-center relative p-1 text-center">
+<span class="material-symbols-outlined text-[20px] text-outline">image</span>
+<span class="text-[9px] font-mono text-on-surface-variant break-all">{{candidate.imageUrl}}</span>
+<span class="absolute top-1 left-1 px-1 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-[10px]">{{candidate.timestamp}}</span>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-semibold">Rank #{{candidate.rank}}</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">00:07.1 • Rank #2</span>
+</button>
+<!-- Candidate Frame 3 -->
+<button class="candidate-thumb shrink-0 w-24 flex flex-col gap-1 text-left group" type="button">
+<div class="w-24 h-24 rounded-lg bg-surface-container-high border border-outline-variant/60 flex flex-col items-center justify-center relative p-1 text-center">
+<span class="material-symbols-outlined text-[20px] text-outline">image</span>
+<span class="text-[9px] font-mono text-on-surface-variant break-all">{{candidate.imageUrl}}</span>
+<span class="absolute top-1 left-1 px-1 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-[10px]">{{candidate.timestamp}}</span>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-semibold">Rank #{{candidate.rank}}</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">00:11.8 • Rank #3</span>
+</button>
+<!-- Candidate Frame 4 -->
+<button class="candidate-thumb shrink-0 w-24 flex flex-col gap-1 text-left group" type="button">
+<div class="w-24 h-24 rounded-lg bg-surface-container-high border border-outline-variant/60 flex flex-col items-center justify-center relative p-1 text-center">
+<span class="material-symbols-outlined text-[20px] text-outline">image</span>
+<span class="text-[9px] font-mono text-on-surface-variant break-all">{{candidate.imageUrl}}</span>
+<span class="absolute top-1 left-1 px-1 rounded bg-inverse-surface/80 text-inverse-on-surface font-label-sm text-[10px]">{{candidate.timestamp}}</span>
+<span class="absolute bottom-1 right-1 px-1 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-semibold">Rank #{{candidate.rank}}</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">00:15.2 • Rank #4</span>
+</button>
+</div>
+<span class="text-[11px] font-mono text-on-surface-variant">{{/each}}</span>
+</div>
+</section>
+<!-- 5. Coverage Checklist (DB: coverageChecklist) -->
+<section class="bg-surface-container-lowest border border-outline-variant/50 rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-2 flex-wrap">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Coverage Checklist</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono text-[10px] uppercase font-bold">DB: coverageChecklist</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Category: {{coverage.categoryName}}</span>
+</div>
+<p class="text-[12px] text-on-surface-variant font-mono">{{#each coverage.requiredViews}}</p>
+<!-- Required Views List -->
+<div class="flex flex-col gap-2">
+<!-- View Item 1 -->
+<div class="flex items-center justify-between bg-tertiary-fixed/40 rounded-lg px-3 py-2 border border-tertiary-fixed">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">{{view.name}} [Front View]</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">{{view.status}} [Covered]</span>
+</div>
+<!-- View Item 2 -->
+<div class="flex items-center justify-between bg-tertiary-fixed/40 rounded-lg px-3 py-2 border border-tertiary-fixed">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">{{view.name}} [Side Silhouette]</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">{{view.status}} [Covered]</span>
+</div>
+<!-- View Item 3 -->
+<div class="flex items-center justify-between bg-tertiary-fixed/40 rounded-lg px-3 py-2 border border-tertiary-fixed">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">{{view.name}} [Top / Rim View]</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">{{view.status}} [Covered]</span>
+</div>
+<!-- View Item 4 -->
+<div class="flex items-center justify-between bg-tertiary-fixed/40 rounded-lg px-3 py-2 border border-tertiary-fixed">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">{{view.name}} [Glaze Detail]</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">{{view.status}} [Covered]</span>
+</div>
+<!-- Missing View Item with Action Button -->
+<div class="flex flex-col gap-2 bg-secondary-container/50 border border-secondary/30 rounded-lg p-3">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-lg text-label-lg text-on-secondary-container font-semibold">{{view.name}} [Base / Maker's Mark]</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">{{view.status}} [Missing]</span>
+</div>
+<button class="h-10 w-full rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.99] transition-transform" id="add-missing-view-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+<span>Add a view</span>
+</button>
+</div>
+</div>
+<span class="text-[12px] text-on-surface-variant font-mono">{{/each}}</span>
+</section>
+<!-- 6. Three Extra State Variants (Collapsible / Tabbed for Rule 4 & 7) -->
+<section class="bg-surface-container-low border border-outline-variant/60 rounded-xl p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">layers</span>
+<h4 class="font-label-lg text-label-lg text-on-surface font-semibold">State Variants (Rule 4 &amp; 7)</h4>
+</div>
+<span class="text-[11px] text-on-surface-variant font-mono">Loading / Empty / Error</span>
+</div>
+<details class="bg-surface-container-lowest rounded-lg border border-outline-variant/40 p-3 group">
+<summary class="font-label-md text-label-md text-on-surface font-semibold cursor-pointer flex items-center justify-between">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        1. Loading Skeleton Variant
+      </span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-3 flex flex-col gap-2.5 animate-pulse">
+<div class="h-4 w-1/3 bg-surface-container-high rounded"></div>
+<div class="grid grid-cols-2 gap-2">
+<div class="h-28 bg-surface-container-high rounded-lg"></div>
+<div class="h-28 bg-surface-container-high rounded-lg"></div>
+</div>
+<div class="h-10 bg-surface-container-high rounded-lg"></div>
+</div>
+</details>
+<details class="bg-surface-container-lowest rounded-lg border border-outline-variant/40 p-3 group">
+<summary class="font-label-md text-label-md text-on-surface font-semibold cursor-pointer flex items-center justify-between">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+        2. Empty State Variant
+      </span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-3 flex flex-col items-center justify-center p-4 text-center gap-2 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-[36px] text-outline">photo_camera_back</span>
+<p class="font-body-md text-body-md text-on-surface">{{emptyMessage}}</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">"No candidate frames detected. Please re-upload or upload photos manually."</p>
+<button class="h-9 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 mt-1" type="button">
+<span class="material-symbols-outlined text-[16px]">upload</span>
+<span>Upload Photos Manually</span>
+</button>
+</div>
+</details>
+<details class="bg-surface-container-lowest rounded-lg border border-outline-variant/40 p-3 group">
+<summary class="font-label-md text-label-md text-on-surface font-semibold cursor-pointer flex items-center justify-between">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+        3. Error State Variant
+      </span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-3 flex flex-col items-center justify-center p-4 text-center gap-2 bg-error-container/40 rounded-lg">
+<span class="material-symbols-outlined text-[36px] text-error">error</span>
+<p class="font-label-lg text-label-lg text-on-error-container font-semibold">Unable to load candidate images</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Network sync failed while extracting video keyframes.</p>
+<button class="h-9 px-4 rounded-lg bg-error text-on-error font-label-md text-label-md flex items-center gap-1.5 mt-1" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Retry</span>
+</button>
+</div>
+</details>
+</section>
+</div>
+<script>
+  (function () {
+    const cards = document.querySelectorAll('.photo-card');
+    const acceptedBadge = document.getElementById('accepted-count-badge');
+
+    function updateAcceptedCount() {
+      const accepted = document.querySelectorAll('.photo-card[data-status="accepted"]').length;
+      if (acceptedBadge) {
+        acceptedBadge.textContent = accepted + ' Accepted';
+      }
+    }
+
+    function setCardMode(card, mode) {
+      card.setAttribute('data-mode', mode);
+      const label = card.querySelector('.mode-label');
+      if (label) {
+        label.textContent = mode === 'enhanced' ? 'Enhanced' : 'Original';
+      }
+    }
+
+    cards.forEach((card) => {
+      const acceptBtn = card.querySelector('.btn-accept');
+      const rejectBtn = card.querySelector('.btn-reject');
+      const replaceBtn = card.querySelector('.btn-replace');
+      const modeBtn = card.querySelector('.card-mode-btn');
+      const overlay = card.querySelector('.status-overlay');
+
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+          card.setAttribute('data-status', 'accepted');
+          if (overlay) overlay.classList.add('hidden');
+          acceptBtn.classList.add('bg-primary', 'text-on-primary');
+          acceptBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          if (rejectBtn) {
+            rejectBtn.classList.remove('bg-error', 'text-on-error');
+            rejectBtn.classList.add('bg-surface-container', 'text-on-surface-variant');
+          }
+          updateAcceptedCount();
+        });
+      }
+
+      if (rejectBtn) {
+        rejectBtn.addEventListener('click', () => {
+          card.setAttribute('data-status', 'rejected');
+          if (overlay) overlay.classList.remove('hidden');
+          rejectBtn.classList.add('bg-error', 'text-on-error');
+          rejectBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          if (acceptBtn) {
+            acceptBtn.classList.remove('bg-primary', 'text-on-primary');
+            acceptBtn.classList.add('bg-surface-container', 'text-on-surface-variant');
+          }
+          updateAcceptedCount();
+        });
+      }
+
+      if (modeBtn) {
+        modeBtn.addEventListener('click', () => {
+          const current = card.getAttribute('data-mode') || 'enhanced';
+          setCardMode(card, current === 'enhanced' ? 'original' : 'enhanced');
+        });
+      }
+
+      if (replaceBtn) {
+        replaceBtn.addEventListener('click', () => {
+          const tray = document.getElementById('candidates-tray');
+          const chevron = document.getElementById('candidates-chevron');
+          if (tray && tray.classList.contains('hidden')) {
+            tray.classList.remove('hidden');
+            if (chevron) chevron.style.transform = 'rotate(180deg)';
+          }
+          tray?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
+    });
+
+    // Global Original vs Enhanced toggle
+    const globalButtons = document.querySelectorAll('[data-global-mode]');
+    globalButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-global-mode');
+        globalButtons.forEach((b) => {
+          b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.remove('text-on-surface-variant');
+        cards.forEach((card) => setCardMode(card, mode));
+      });
+    });
+
+    // Collapsible Candidates Tray
+    const candidatesToggle = document.getElementById('candidates-toggle');
+    const candidatesTray = document.getElementById('candidates-tray');
+    const candidatesChevron = document.getElementById('candidates-chevron');
+    if (candidatesToggle && candidatesTray) {
+      candidatesToggle.addEventListener('click', () => {
+        const isHidden = candidatesTray.classList.toggle('hidden');
+        if (candidatesChevron) {
+          candidatesChevron.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+      });
+    }
+
+    // Add missing view button
+    const addMissingBtn = document.getElementById('add-missing-view-btn');
+    if (addMissingBtn && candidatesTray) {
+      addMissingBtn.addEventListener('click', () => {
+        candidatesTray.classList.remove('hidden');
+        if (candidatesChevron) candidatesChevron.style.transform = 'rotate(180deg)';
+        candidatesTray.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+  })();
+</script>
+</main>
+<!-- 7. Fixed Footer Navigation: Secondary "Back to processing" & Primary "Approve images and continue to AI draft" -->
+<footer class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl border-t border-outline-variant/40 shadow-[0_-2px_16px_rgba(24,25,50,0.08)]">
+<div class="h-20 px-margin flex items-center justify-between gap-space-sm">
+<button class="h-12 px- space-md px-4 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-colors flex items-center justify-center shrink-0 border border-outline-variant/50" onclick="history.back()">
+<span class="material-symbols-outlined text-[18px] mr-1">arrow_back</span>
+<span>Back to processing</span>
+</button>
+<a class="flex-1 h-12 px- space-md px-4 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold shadow-[0_4px_16px_rgba(55,101,107,0.30)] flex items-center justify-center gap-1.5 transition-transform active:scale-[0.98] text-center" data-path="add-product-step-5" href="#">
+<span class="truncate">Approve images and continue to AI draft</span>
+<span class="material-symbols-outlined text-[20px] shrink-0">arrow_forward</span>
+</a>
+</div>
+</footer>
+<script src="../nav_bridge.js"></script></body></html>

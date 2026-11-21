@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fcf8ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,600;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface-variant": "#404849", "on-primary-fixed": "#001f23", "inverse-on-surface": "#f1efff", "secondary": "#765a22", "secondary-fixed-dim": "#e7c17f", "surface-container-high": "#e7e6ff", "surface-dim": "#d8d7f8", "surface-tint": "#37656b", "on-secondary-container": "#795c25", "tertiary": "#516351", "surface-bright": "#fcf8ff", "secondary-fixed": "#ffdea7", "primary": "#37656b", "error-container": "#ffdad6", "tertiary-fixed-dim": "#b8ccb6", "outline-variant": "#c0c8c9", "surface": "#fcf8ff", "primary-fixed-dim": "#9fcfd5", "on-tertiary-container": "#2a3b2b", "on-background": "#181932", "on-primary-container": "#053d43", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "primary-container": "#79a8ae", "primary-fixed": "#baebf1", "outline": "#70797a", "on-tertiary-fixed": "#0f1f11", "on-secondary-fixed": "#271900", "on-secondary": "#ffffff", "on-error-container": "#93000a", "tertiary-container": "#92a590", "on-tertiary-fixed-variant": "#3a4b3a", "background": "#fcf8ff", "surface-variant": "#e1e0ff", "secondary-container": "#ffd793", "inverse-surface": "#2d2e48", "on-primary": "#ffffff", "on-surface": "#181932", "tertiary-fixed": "#d4e8d1", "inverse-primary": "#9fcfd5", "surface-container-highest": "#e1e0ff", "on-secondary-fixed-variant": "#5c420c", "surface-container-low": "#f5f2ff", "on-error": "#ffffff", "surface-container": "#eeecff", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#1c4d53" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "gutter": "1rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "margin-desktop": "2rem", "margin": "1rem", "space-md": "1rem" }, fontFamily: { "display-lg-mobile": ["Noto Serif"], "label-md": ["Inter"], "headline-lg-mobile": ["Noto Serif"], "headline-sm": ["Noto Serif"], "label-lg": ["Inter"], "headline-md": ["Noto Serif"], "body-md": ["Inter"], "label-sm": ["Inter"], "display-lg": ["Noto Serif"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Noto Serif"] }, fontSize: { "display-lg-mobile": ["30px", { lineHeight: "38px", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "30px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", fontWeight: "600" }], "display-lg": ["40px", { lineHeight: "52px", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/95 backdrop-blur-xl shadow-[0_1px_12px_rgba(24,25,50,0.06)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Go back" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0"><h1 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight truncate">Add product, step 1 of 5: Product facts</h1><div class="flex items-center gap-1.5"><span class="inline-block w-2 h-2 rounded-full bg-primary"></span><span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide">Step {{wizard.currentStep}} of 5: Product facts • Status: {{draft.status}}</span></div></div></div><div class="flex items-center gap-2 shrink-0"><div class="flex items-center gap-2 p-1 pl-2 rounded-full bg-surface-container-low border-surface-dim/40"><div class="flex flex-col items-end text-right hidden xs:inline"><span class="font-label-sm text-label-sm font-semibold text-on-surface truncate max-w-[100px]">{{user.name}}</span><span class="font-body-sm text-[11px] text-on-surface-variant leading-none">{{user.role}} (Seller Studio) • {{user.language}}</span></div><img alt="{{user.name}}" class="w-9 h-9 rounded-full object-cover bg-surface-container" onerror="this.style.display='none'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0B3DTBmc4grrOA5-bm0TH3rbyJ_amsXi3POdsrbbiEZHVu1x-fVxF-YEpEii9IUcJSGsBU3NngMjaA7Hi5WX30wVyo6l7nba3EHMrz7vIu4jPe_ULdAKBAYMtra-aeqQTbPU6DIlq11i36nXFC_BS94FkcXLQnaqa-I_rOhEqjJjNIo53e1Q6yEvDCe93IjC-FzOXo0cITirDDcuU7JgQdhbMsbnp1ftXyeWEh7qZ"/><button aria-label="Artisan Helpline Assistance" class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-primary flex items-center justify-center transition-colors"><span class="material-symbols-outlined text-[18px]">support_agent</span></button></div></div></div><div class="w-full h-1 bg-surface-container"><div class="h-full bg-primary rounded-r-full transition-all duration-300 w-1/5"></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Multi-step Visual Indicator -->
+<section class="px-margin pt-space-sm pb-space-xs"><div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative"><div class="flex items-center justify-between gap-space-xs mb-space-sm"><div class="flex items-center gap-2"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Step {{wizard.currentStep}} of 5</span><span class="px-1.5 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-on-surface-variant">DB: productDrafts</span></div><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Draft Status: {{draft.status}}</span></div><div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none"><div class="h-2 flex-1 rounded-full bg-primary" title="Step 1: Facts"></div><div class="h-2 flex-1 rounded-full bg-surface-container" title="Step 2: Video"></div><div class="h-2 flex-1 rounded-full bg-surface-container" title="Step 3: Processing"></div><div class="h-2 flex-1 rounded-full bg-surface-container" title="Step 4: Review Images"></div><div class="h-2 flex-1 rounded-full bg-surface-container" title="Step 5: Draft and publish"></div></div><div class="flex justify-between items-center mt-2 text-on-surface-variant font-label-sm text-label-sm"><span class="text-primary font-bold">1 Facts ({{wizard.currentStep}})</span><span class="opacity-60">2 Video</span><span class="opacity-60">3 AI process</span><span class="opacity-60">4 Review</span><span class="opacity-60">5 Draft and publish</span></div></div></section>
+<!-- Friendly Voice & AI Honesty Callout -->
+<section class="px-margin py-space-xs">
+<div class="bg-secondary-container/50 p-space-md rounded-xl shadow-sm flex gap-space-sm items-start">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">record_voice_over</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-lg text-label-lg font-semibold text-on-secondary-container">
+          अपनी भाषा में बोलें / Speak in your language
+        </p>
+<p class="font-body-sm text-body-sm text-on-secondary-container/90 mt-0.5">
+          Don't worry about English or grammar. Just tap any microphone and speak naturally in Hindi, Marwari, Bengali, or Gujarati.
+        </p>
+</div>
+</div>
+</section>
+<!-- Zero-Hallucination & AI Honesty Guarantee Banner -->
+<section class="px-margin py-space-xs">
+<div class="bg-tertiary-fixed/60 p-space-md rounded-xl shadow-sm flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-on-tertiary-fixed">Kala Connect Purity Guarantee</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-lowest text-tertiary font-label-sm text-label-sm font-semibold">100% Truth</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mt-1 leading-snug">
+          "हम छूटे हुए विवरणों का अनुमान नहीं लगाएंगे — केवल आपका सच्चा काम दिखेगा।"
+        </p>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mt-1 font-medium">
+          If you leave any field empty, our AI will <strong class="font-semibold text-on-tertiary-fixed">never invent or guess</strong> specifications. Buyers see only what you personally confirm.
+        </p>
+</div>
+</div>
+</section>
+<!-- Main Step 1 Form Form Fields -->
+<form class="px-margin py-space-xs space-y-space-md" id="product-facts-form"><!-- 1. Craft / Product Name with {{draft.fields.title}} -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-2 relative">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5" for="product-name">
+<span>Product Title / Name</span>
+<span class="text-error font-body-sm text-body-sm">*</span>
+</label>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold">{{draft.fields.title || 'Not provided'}}</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+    Bound token: <code class="text-primary font-semibold">{{draft.fields.title}}</code>
+</p>
+<div class="relative flex items-center">
+<input class="w-full h-12 pl-3 pr-14 rounded-lg bg-surface-container-low text-on-surface font-body-lg text-body-lg focus:outline-none focus:bg-surface-container-lowest shadow-sm placeholder:text-on-surface-variant/60" id="product-name" name="product_name" placeholder="Not provided" type="text" value="{{draft.fields.title}}"/>
+<button aria-label="Voice input (proposed)" class="absolute right-1 px-2.5 h-11 rounded-lg bg-primary-container text-on-primary-container flex items-center gap-1 shadow-sm hover:brightness-105 active:scale-95 transition-transform" title="Voice input (proposed)" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span class="font-label-sm text-label-sm font-semibold hidden xs:inline">Voice input (proposed)</span>
+</button>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">translate</span>
+<span>Auto dual-language translation (Hindi + English)</span>
+</div>
+<span class="text-[11px] text-on-surface-variant font-mono">DB: productDrafts.title</span>
+</div>
+</div>
+<!-- 2. Craft Category with {{draft.fields.category}} & DB: craftCategories -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3 relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<label class="font-headline-sm text-headline-sm text-on-surface">Craft Category</label>
+<span class="px-1.5 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-on-surface-variant">DB: craftCategories</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Current: {{draft.fields.category || 'Not provided'}}</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+    Select craft lineage bound to <code class="text-primary font-semibold">{{draft.fields.category}}</code>:
+  </p>
+<div aria-label="Craft Categories" class="grid grid-cols-2 gap-2" role="radiogroup">
+<label class="category-pill flex items-center gap-2 p-2.5 rounded-lg bg-primary text-on-primary shadow-sm cursor-pointer transition-all active:scale-[0.98]">
+<input checked="" class="hidden" name="craft_category" type="radio" value="Pottery &amp; Clay"/>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">potted_plant</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold truncate leading-tight">Pottery &amp; Clay</span>
+<span class="font-label-sm text-label-sm opacity-90 truncate leading-tight">मिट्टी व चीनी मिट्टी</span>
+</div>
+</label>
+<label class="category-pill flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container shadow-sm cursor-pointer transition-all active:scale-[0.98]">
+<input class="hidden" name="craft_category" type="radio" value="Handloom &amp; Weaves"/>
+<span class="material-symbols-outlined text-[20px] text-primary">texture</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold truncate leading-tight">Handloom &amp; Weaves</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate leading-tight">हथकरघा वस्त्र</span>
+</div>
+</label>
+<label class="category-pill flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container shadow-sm cursor-pointer transition-all active:scale-[0.98]">
+<input class="hidden" name="craft_category" type="radio" value="Woodcraft &amp; Inlay"/>
+<span class="material-symbols-outlined text-[20px] text-primary">carpenter</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold truncate leading-tight">Woodcraft &amp; Inlay</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate leading-tight">काष्ठ शिल्प</span>
+</div>
+</label>
+<label class="category-pill flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container shadow-sm cursor-pointer transition-all active:scale-[0.98]">
+<input class="hidden" name="craft_category" type="radio" value="Metal &amp; Dhokra"/>
+<span class="material-symbols-outlined text-[20px] text-primary">hardware</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold truncate leading-tight">Metal &amp; Dhokra</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate leading-tight">ढोकरा व धातु</span>
+</div>
+</label>
+</div>
+</div>
+<!-- 3. Raw Materials with {{draft.fields.materials}} -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<label class="font-headline-sm text-headline-sm text-on-surface block" for="materials-input">
+        Raw Materials Used
+      </label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Token: <code class="text-primary font-semibold">{{draft.fields.materials || 'Not provided'}}</code></span>
+</div>
+<button aria-label="Voice input (proposed)" class="px-2.5 h-11 rounded-lg bg-primary-container text-on-primary-container flex items-center gap-1 shadow-sm shrink-0 active:scale-95" title="Voice input (proposed)" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span class="font-label-sm text-label-sm font-semibold hidden xs:inline">Voice input (proposed)</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-1.5 min-h-[38px] p-2 rounded-lg bg-surface-container-low" id="material-tags">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm">
+<span>{{draft.fields.materials || 'Not provided'}}</span>
+<button class="material-symbols-outlined text-[14px] hover:text-error" onclick="this.parentElement.remove()" type="button">close</button>
+</span>
+</div>
+<div class="flex items-center gap-2">
+<input class="flex-1 h-11 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm placeholder:text-on-surface-variant/60" id="materials-input" placeholder="Not provided" type="text"/>
+<button class="h-11 px-4 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold flex items-center gap-1 shadow-sm active:scale-95" onclick="addTagFromInput()" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Add</span>
+</button>
+</div>
+</div>
+<!-- 4. Dimensions & Weight with {{draft.fields.dimensions.height}}, width, weight -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<label class="font-headline-sm text-headline-sm text-on-surface block">
+        Dimensions &amp; Weight
+      </label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Accurate sizes for delivery calculations</span>
+</div>
+<div class="inline-flex p-0.5 rounded-lg bg-surface-container">
+<button class="px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs" id="unit-cm" onclick="setDimensionUnit('cm')" type="button">cm / g</button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant font-label-sm text-label-sm font-medium" id="unit-in" onclick="setDimensionUnit('in')" type="button">inches / kg</button>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Height ({{draft.fields.dimensions.height || 'Not provided'}})</span>
+<div class="relative flex items-center">
+<input class="w-full h-11 pl-2.5 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none" inputmode="decimal" placeholder="Not provided" type="text" value="{{draft.fields.dimensions.height}}"/>
+<span class="absolute right-2 font-label-sm text-label-sm text-on-surface-variant unit-label">cm</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Width/Dia ({{draft.fields.dimensions.width || 'Not provided'}})</span>
+<div class="relative flex items-center">
+<input class="w-full h-11 pl-2.5 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none" inputmode="decimal" placeholder="Not provided" type="text" value="{{draft.fields.dimensions.width}}"/>
+<span class="absolute right-2 font-label-sm text-label-sm text-on-surface-variant unit-label">cm</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">Weight ({{draft.fields.dimensions.weight || 'Not provided'}})</span>
+<div class="relative flex items-center">
+<input class="w-full h-11 pl-2.5 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none" inputmode="decimal" placeholder="Not provided" type="text" value="{{draft.fields.dimensions.weight}}"/>
+<span class="absolute right-2 font-label-sm text-label-sm text-on-surface-variant weight-label">g</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. Maker Price with {{draft.fields.makerPrice}} and link 'Open Price Helper (guide only)' -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div>
+<label class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1" for="artisan-price">
+<span>Maker Price</span>
+<span class="text-error font-body-sm text-body-sm">*</span>
+</label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Token: <code class="text-primary font-semibold">{{draft.fields.makerPrice || 'Not provided'}}</code></span>
+</div>
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-secondary hover:underline cursor-pointer" href="#" onclick="openPriceHelper()">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+<span>Open Price Helper (guide only)</span>
+</a>
+</div>
+<div class="relative flex items-center">
+<div class="absolute left-3 font-headline-md text-headline-md text-on-surface font-bold">₹</div>
+<input class="w-full h-14 pl-9 pr-14 rounded-lg bg-surface-container-low text-on-surface font-headline-md text-headline-md font-bold focus:bg-surface-container-lowest focus:outline-none" id="artisan-price" inputmode="numeric" name="price" placeholder="Not provided" type="text" value="{{draft.fields.makerPrice}}"/>
+<button aria-label="Voice input (proposed)" class="absolute right-1.5 px-2.5 h-11 rounded-lg bg-primary-container text-on-primary-container flex items-center gap-1 shadow-sm" title="Voice input (proposed)" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span class="font-label-sm text-label-sm font-semibold hidden xs:inline">Voice input (proposed)</span>
+</button>
+</div>
+</div>
+<!-- 6. Ready Stock & Lead Time with {{draft.fields.availability}} and {{draft.fields.leadTimeDays}} -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-3">
+<label class="font-headline-sm text-headline-sm text-on-surface block">
+    Stock &amp; Lead Time
+  </label>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Availability (Ready)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mb-2">Bound: {{draft.fields.availability || 'Not provided'}}</span>
+<div class="flex items-center justify-between">
+<button class="w-9 h-9 rounded-md bg-surface-container text-on-surface flex items-center justify-center font-bold text-lg active:scale-95" onclick="adjustCount('stock-count', -1)" type="button">-</button>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface" id="stock-count">{{draft.fields.availability || 'Not provided'}}</span>
+<button class="w-9 h-9 rounded-md bg-surface-container text-on-surface flex items-center justify-center font-bold text-lg active:scale-95" onclick="adjustCount('stock-count', 1)" type="button">+</button>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Making Lead Time</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mb-2">Bound: {{draft.fields.leadTimeDays || 'Not provided'}} days</span>
+<div class="relative flex items-center">
+<input class="w-full h-9 px-2 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md font-bold text-center focus:outline-none" id="lead-days" placeholder="Not provided" type="text" value="{{draft.fields.leadTimeDays || 'Not provided'}}"/>
+</div>
+</div>
+</div>
+</div>
+<!-- 7. Care & Handling with {{draft.fields.careInstructions}} -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-headline-sm text-on-surface" for="care-notes">
+      Care &amp; Handling Instructions
+    </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Optional</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+    Token: <code class="text-primary font-semibold">{{draft.fields.careInstructions || 'Not provided'}}</code>
+</p>
+<div class="relative">
+<textarea class="w-full p-3 pr-14 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none shadow-sm placeholder:text-on-surface-variant/60" id="care-notes" placeholder="Not provided" rows="3">{{draft.fields.careInstructions}}</textarea>
+<button aria-label="Voice input (proposed)" class="absolute top-2 right-2 px-2.5 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center gap-1 shadow-sm active:scale-95" title="Voice input (proposed)" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+<span class="font-label-sm text-label-sm font-semibold hidden xs:inline">Voice input (proposed)</span>
+</button>
+</div>
+</div>
+<!-- Required note under the form -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-start gap-2.5 shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">shield</span>
+<p class="font-body-sm text-body-sm text-on-surface font-medium leading-snug">
+    We will not guess missing details. Anything you leave blank stays blank.
+  </p>
+</div>
+<!-- UI State Variants Drawer (Loading / Empty / Error) -->
+<div class="p-3 rounded-xl bg-surface-container-low border-surface-dim/40 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">State Variants Preview</span>
+<span class="text-[11px] text-on-surface-variant font-mono">DB: productDrafts</span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="p-2 rounded bg-surface-container-lowest shadow-xs">
+<span class="font-label-sm text-label-sm text-primary font-bold block">Loading</span>
+<span class="text-[11px] text-on-surface-variant">Fetching draft...</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest shadow-xs">
+<span class="font-label-sm text-label-sm text-secondary font-bold block">Empty</span>
+<span class="text-[11px] text-on-surface-variant">Renders 'Not provided'</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest shadow-xs">
+<span class="font-label-sm text-label-sm text-error font-bold block">Error</span>
+<span class="text-[11px] text-on-surface-variant">Draft sync failed</span>
+</div>
+</div>
+</div>
+<!-- Visual Step 2 Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center gap-3">
+<img class="w-16 h-16 rounded-lg object-cover bg-surface-container" data-alt="Close-up macro photograph of handcrafted royal blue Jaipur pottery floral vase with delicate turquoise glaze and hand-painted Persian leaf motifs on a warm unbleached rustic linen table. Natural morning studio window light highlighting authentic ceramic texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTcnvHtPgfpGiR7au5--StOlZVSXiCpLs_HAQOFr5f4div_qlQOVEm_8FgcIpiIv-yMoSV1a3jNenZpB4mxmvfkAEvhOH-_9N2oe4RdRosqluqOc85ZyAwArbX0QSQOxz32Mlb9EUzIFA7t98ZBjXj4VpMaVpuDtnDfbOpGREzDdtBDJSlTZDW0R9vWapeC7lTvvjlA75oMtOFbZ8iSmzCZTAccTQonHrUm_3riFm-"/>
+<div class="flex-1 min-w-0">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Upcoming Step 2</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface truncate">20-Second Craft Video</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Next, capture your hand movements, wheel spin, or loom rhythm.</p>
+</div>
+</div></form>
+<!-- Interactive Voice Modal Notification (Hidden by default, triggered by mic click) -->
+<div class="hidden fixed bottom-28 left-4 right-4 z-40 bg-inverse-surface text-inverse-on-surface p-3.5 rounded-xl shadow-xl flex items-center justify-between animate-bounce" id="voice-toast">
+<div class="flex items-center gap-3 min-w-0">
+<span class="w-3 h-3 rounded-full bg-error animate-ping"></span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-bold truncate">सुन रहे हैं... / Listening in your language</span>
+<span class="font-body-sm text-body-sm opacity-90 truncate">Speak clearly now. Assistant will transcribe.</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold" onclick="closeVoiceToast()" type="button">Done</button>
+</div>
+</div>
+<script>
+  // Simple Voice Input simulator micro-interaction
+  function toggleVoiceInput(targetFieldId, triggerBtn) {
+    const toast = document.getElementById('voice-toast');
+    const field = document.getElementById(targetFieldId);
+    
+    if (toast) {
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        if (!toast.classList.contains('hidden')) {
+          if (targetFieldId === 'product-name' && (!field.value || field.value === '')) {
+            field.value = 'हाथ से बना नीली मिट्टी का शाही गुलदस्ता (Blue Pottery Royal Vase)';
+          } else if (targetFieldId === 'materials-input') {
+            addSuggestedTag('Natural Feldspar & Katira Gond');
+          } else if (targetFieldId === 'care-notes' && (!field.value || field.value === '')) {
+            field.value = 'नरम गीले कपड़े से पोंछें, माइक्रोवेव में न रखें।';
+          }
+          toast.classList.add('hidden');
+        }
+      }, 2500);
+    }
+  }
+
+  function closeVoiceToast() {
+    const toast = document.getElementById('voice-toast');
+    if (toast) toast.classList.add('hidden');
+  }
+
+  // Tag helper
+  function addTagFromInput() {
+    const input = document.getElementById('materials-input');
+    if (input && input.value.trim() !== '') {
+      addSuggestedTag(input.value.trim());
+      input.value = '';
+    }
+  }
+
+  function addSuggestedTag(tagText) {
+    const cleanText = tagText.replace(/^\+\s*/, '');
+    const container = document.getElementById('material-tags');
+    if (container) {
+      const tag = document.createElement('span');
+      tag.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm animate-fade-in';
+      tag.innerHTML = `<span>${cleanText}</span><button type="button" class="material-symbols-outlined text-[14px] hover:text-error" onclick="this.parentElement.remove()">close</button>`;
+      container.appendChild(tag);
+    }
+  }
+
+  // Dimension Unit Switcher
+  function setDimensionUnit(unit) {
+    const btnCm = document.getElementById('unit-cm');
+    const btnIn = document.getElementById('unit-in');
+    const unitLabels = document.querySelectorAll('.unit-label');
+    const weightLabel = document.querySelector('.weight-label');
+
+    if (unit === 'cm') {
+      btnCm.className = 'px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs';
+      btnIn.className = 'px-2.5 py-1 rounded-md text-on-surface-variant font-label-sm text-label-sm font-medium';
+      unitLabels.forEach(el => el.textContent = 'cm');
+      if (weightLabel) weightLabel.textContent = 'g';
+    } else {
+      btnIn.className = 'px-2.5 py-1 rounded-md bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-xs';
+      btnCm.className = 'px-2.5 py-1 rounded-md text-on-surface-variant font-label-sm text-label-sm font-medium';
+      unitLabels.forEach(el => el.textContent = 'in');
+      if (weightLabel) weightLabel.textContent = 'kg';
+    }
+  }
+
+  // Stock Counter adjuster
+  function adjustCount(elementId, change) {
+    const el = document.getElementById(elementId);
+    if (el) {
+      let val = parseInt(el.textContent, 10) || 0;
+      val = Math.max(0, val + change);
+      el.textContent = val;
+    }
+  }
+
+  // Price helper modal prompt trigger
+  function openPriceHelper() {
+    const priceInput = document.getElementById('artisan-price');
+    if (priceInput) {
+      const suggested = prompt("Kala Connect Market Advisory:\nBased on current buyer demand for authentic Jaipur Blue Pottery, recommended artisan price is ₹1,650 - ₹2,100.\n\nEnter your preferred price in ₹:", priceInput.value || "1850");
+      if (suggested && !isNaN(suggested)) {
+        priceInput.value = suggested;
+      }
+    }
+  }
+
+  // Category pill selection toggle
+  document.querySelectorAll('.category-pill').forEach(pill => {
+    pill.addEventListener('click', function() {
+      document.querySelectorAll('.category-pill').forEach(p => {
+        p.className = 'category-pill flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container shadow-sm cursor-pointer transition-all active:scale-[0.98]';
+        const icon = p.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          icon.classList.add('text-primary');
+        }
+      });
+      this.className = 'category-pill flex items-center gap-2 p-2.5 rounded-lg bg-primary text-on-primary shadow-sm cursor-pointer transition-all active:scale-[0.98]';
+      const icon = this.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.style.fontVariationSettings = "'FILL' 1";
+        icon.classList.remove('text-primary');
+      }
+    });
+  });
+</script></main><footer class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_16px_rgba(24,25,50,0.08)]"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><button class="h-12 px-space-md rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center shrink-0" data-path="drafts">Save as Draft ({{draft.status}})</button><a class="flex-1 h-12 px-space-md rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold shadow-[0_4px_16px_rgba(55,101,107,0.30)] flex items-center justify-center gap-2 transition-transform active:scale-[0.98]" data-path="add-product-step-2" href="#"><span>Continue to Video (Step 2)</span><span class="material-symbols-outlined text-[20px]">arrow_forward</span></a></div></footer><script src="../nav_bridge.js"></script></body></html>

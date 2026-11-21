@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fcf8ff;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,600;1,600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface-variant": "#404849", "on-primary-fixed": "#001f23", "inverse-on-surface": "#f1efff", "secondary": "#765a22", "secondary-fixed-dim": "#e7c17f", "surface-container-high": "#e7e6ff", "surface-dim": "#d8d7f8", "surface-tint": "#37656b", "on-secondary-container": "#795c25", "tertiary": "#516351", "surface-bright": "#fcf8ff", "secondary-fixed": "#ffdea7", "primary": "#37656b", "error-container": "#ffdad6", "tertiary-fixed-dim": "#b8ccb6", "outline-variant": "#c0c8c9", "surface": "#fcf8ff", "primary-fixed-dim": "#9fcfd5", "on-tertiary-container": "#2a3b2b", "on-background": "#181932", "on-primary-container": "#053d43", "surface-container-lowest": "#ffffff", "error": "#ba1a1a", "primary-container": "#79a8ae", "primary-fixed": "#baebf1", "outline": "#70797a", "on-tertiary-fixed": "#0f1f11", "on-secondary-fixed": "#271900", "on-secondary": "#ffffff", "on-error-container": "#93000a", "tertiary-container": "#92a590", "on-tertiary-fixed-variant": "#3a4b3a", "background": "#fcf8ff", "surface-variant": "#e1e0ff", "secondary-container": "#ffd793", "inverse-surface": "#2d2e48", "on-primary": "#ffffff", "on-surface": "#181932", "tertiary-fixed": "#d4e8d1", "inverse-primary": "#9fcfd5", "surface-container-highest": "#e1e0ff", "on-secondary-fixed-variant": "#5c420c", "surface-container-low": "#f5f2ff", "on-error": "#ffffff", "surface-container": "#eeecff", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#1c4d53" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "gutter": "1rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "margin-desktop": "2rem", "margin": "1rem", "space-md": "1rem" }, fontFamily: { "display-lg-mobile": ["Noto Serif"], "label-md": ["Inter"], "headline-lg-mobile": ["Noto Serif"], "headline-sm": ["Noto Serif"], "label-lg": ["Inter"], "headline-md": ["Noto Serif"], "body-md": ["Inter"], "label-sm": ["Inter"], "display-lg": ["Noto Serif"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Noto Serif"], "mono": ["JetBrains Mono", "monospace"] }, fontSize: { "display-lg-mobile": ["30px", { lineHeight: "38px", fontWeight: "600" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }], "headline-sm": ["18px", { lineHeight: "26px", fontWeight: "600" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-md": ["22px", { lineHeight: "30px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "label-sm": ["11px", { lineHeight: "14px", fontWeight: "600" }], "display-lg": ["40px", { lineHeight: "52px", fontWeight: "600" }], "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }], "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed">
+<!-- DEV-ONLY DEMO USER SWITCHER BAR -->
+<aside class="sticky top-0 z-[60] bg-inverse-surface text-inverse-on-surface border-b border-white/10 shadow-lg text-xs font-mono" id="dev-switcher-bar">
+<div class="px-3 py-1.5 flex flex-wrap items-center justify-between gap-1.5 border-b border-white/10 bg-black/20">
+<div class="flex items-center gap-1.5 font-bold tracking-tight text-[11px] text-secondary-fixed">
+<span class="inline-block animate-pulse">🛠️</span>
+<span>DEV MODE: DEMO USER SWITCHER</span>
+</div>
+<div class="flex items-center gap-1 text-[10px] text-surface-container-high">
+<span>AUTH ID:</span>
+<span class="bg-black/40 px-1 py-0.5 rounded text-secondary-fixed-dim" id="active-uid-badge">artisan_usr_govind_01</span>
+</div>
+</div>
+<div class="px-2.5 py-1.5 flex flex-wrap items-center justify-between gap-2">
+<!-- Persona Switcher -->
+<div class="flex items-center gap-1 bg-black/40 p-0.5 rounded-lg">
+<button class="px-2 py-1 rounded font-semibold text-[10px] transition-all bg-primary text-on-primary flex items-center gap-1 shadow-xs" id="persona-artisan-btn" onclick="switchPersona('artisan')">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span>Artisan: Master Govind Ram</span>
+<span class="opacity-70 text-[9px]">(`artisan_usr_govind_01`)</span>
+</button>
+<button class="px-2 py-1 rounded font-medium text-[10px] transition-all text-inverse-on-surface/80 hover:text-white hover:bg-white/10 flex items-center gap-1" id="persona-buyer-btn" onclick="switchPersona('buyer')">
+<span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+<span>Buyer: Ananya Sharma</span>
+<span class="opacity-60 text-[9px]">(`buyer_usr_ananya_42`)</span>
+</button>
+</div>
+<!-- State Indicators Switcher -->
+<div class="flex items-center gap-1 overflow-x-auto">
+<span class="text-[9px] text-surface-container-high font-semibold uppercase tracking-wider hidden sm:inline">STATE:</span>
+<button class="px-2 py-1 rounded text-[10px] font-semibold bg-tertiary text-on-tertiary border border-tertiary-fixed/30 transition-all" id="state-loaded-btn" onclick="setDashboardState('loaded')">
+        [State: Loaded]
+      </button>
+<button class="px-2 py-1 rounded text-[10px] font-medium bg-black/30 text-surface-container-high hover:bg-white/10 transition-all border border-white/10" id="state-skeleton-btn" onclick="setDashboardState('skeleton')">
+        [State: Loading Skeleton]
+      </button>
+<button class="px-2 py-1 rounded text-[10px] font-medium bg-black/30 text-surface-container-high hover:bg-white/10 transition-all border border-white/10" id="state-empty-btn" onclick="setDashboardState('empty')">
+        [State: Empty / 0 Data]
+      </button><button class="px-2 py-1 rounded text-[10px] font-medium bg-black/30 text-surface-container-high hover:bg-white/10 transition-all border border-white/10" id="state-error-btn" onclick="setDashboardState('error')">[State: Error with Retry]</button>
+</div>
+</div>
+</aside>
+<header class="fixed top-[58px] w-full z-40 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_12px_rgba(24,25,50,0.05)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shrink-0 shadow-[0_2px_8px_rgba(55,101,107,0.25)]"><span class="material-symbols-outlined text-on-primary text-[22px]">palette</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-[16px] text-on-surface font-semibold tracking-tight truncate">Kala Connect</span></div><span class="font-label-sm text-[10px] uppercase tracking-wider text-primary font-semibold">{{user.role}}</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button class="h-9 px-space-sm rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-1 font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[15px] text-primary">translate</span><span>{{user.language}}</span><span class="material-symbols-outlined text-[13px] text-on-surface-variant">expand_more</span></button><button class="relative w-9 h-9 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="w-7 h-7 rounded-full bg-surface-container overflow-hidden flex items-center justify-center ring-2 ring-primary/20 shrink-0"><img alt="{{user.name}}" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJpAQl3bf-rfVCY0Nq4x2l5-Pl91rjJq1KJ39NhOfGVQyyCySnIl2Naht3lnTKCGRVKIrqB43glnjDl8ywadfzbdHOFh9ekn0Ul46OvXO0KqtOLE944PVrhttJghY9f9p3X4YNVfw5IAfPqtKShUKW2WPIP9cWOQShPCCMWaJlCg_BQBqaTAae3PU_664xwSvlHs0ofC7QthGtcfkV21v2bm2UkjNW2kR20QTrU-in"/></div></div></div></header>
+<main class="flex-1 flex flex-col relative w-full pt-[124px] pb-24 bg-surface min-h-screen">
+<!-- DASHBOARD VIEW: STATE 1 - LOADED (DYNAMIC TYPED DATA TOKENS) -->
+<div class="flex flex-col w-full pb-8 space-y-4" id="view-loaded">
+<!-- Greeting & Artisan Identity Card -->
+<section class="mx-margin mt-2"><div class="flex items-center justify-between px-1 mb-1 font-mono text-[10px] text-primary font-semibold"><span class="inline-flex items-center gap-1 bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>DB: artisanProfile</span><span class="text-on-surface-variant/70 text-[9px]">schema: ArtisanProfileDTO</span></div><div class="bg-surface-container-lowest p-space-md rounded-xl shadow-[0_2px_12px_rgba(24,25,50,0.04)] relative overflow-hidden border border-outline-variant/30"><div class="flex items-start justify-between gap-space-sm relative z-10"><div class="min-w-0 flex-1"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed mb-2"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span><span class="font-label-sm text-label-sm font-mono font-medium">{{artisan.regionalCluster}}</span></div><h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold tracking-tight">Namaste, <span class="text-primary font-mono bg-primary-fixed/40 px-1.5 py-0.5 rounded text-[20px]">{{user.name}}</span></h1><p class="font-body-sm text-body-sm text-on-surface font-mono mt-1">{{artisan.displayName}} • {{artisan.craftLineage}}</p></div><div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center shrink-0 overflow-hidden shadow-sm relative"><img alt="{{user.name}}" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM3LJNhITTVNWFlPCJDCimWawbUEHbRdc95VRlpki9zeJ2D-0cSqmwU4H5DuM37fQzpel8bHP1VzWt8xxxsg1XpOdJXFc1BPh41EOvOCvJk2GgdeuZ7C6khZQPB0jneTr2G0QTKwpqGC2CyxP2OjRWNrNwLQdGmsfwnYed2YRLYHVtg7udhyRoNM5mEyWQ8VEhlLxPFmhTp_zgLIbHeWWXH6RcyznICYY91DuGoAjN"/><div class="absolute bottom-0 inset-x-0 bg-black/60 text-white font-mono text-[8px] text-center py-0.5">AVATAR</div></div></div><div class="mt-4 pt-3 flex flex-wrap items-center justify-between gap-2 relative z-10 bg-surface-container-low px-3 py-2 rounded-lg border border-outline-variant/20"><div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface font-mono">Workshop Status: <span class="text-tertiary font-bold">{{artisan.workshopStatus}}</span></span></div><div class="flex items-center gap-2"><a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold hover:text-on-primary-container px-2 py-1 rounded" href="#"><span>View Store</span><span class="material-symbols-outlined text-[14px]">open_in_new</span></a><button class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold hover:text-on-secondary-container px-2 py-1 rounded active:scale-95 transition-transform" id="shareStoreBtn"><span class="material-symbols-outlined text-[14px]">share</span><span>Share</span></button></div></div></div></section>
+<!-- Primary Call to Action: Add Product Hero -->
+<section class="mx-margin"><div class="bg-primary text-on-primary rounded-xl p-space-md shadow-[0_4px_16px_rgba(55,101,107,0.22)] relative overflow-hidden"><svg class="absolute right-0 top-0 h-full w-36 text-primary-fixed-dim/20 pointer-events-none" fill="currentColor" viewbox="0 0 100 100"><path d="M50 0 C60 30, 80 40, 100 50 C80 60, 60 70, 50 100 C40 70, 20 60, 0 50 C20 40, 40 30, 50 0 Z"></path></svg><div class="relative z-10"><div class="flex items-center gap-2 mb-1 text-primary-fixed"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-label-md text-label-md font-semibold tracking-wider uppercase font-mono">AI Assisted Cataloging</span></div><h2 class="font-headline-sm text-headline-sm text-on-primary font-semibold">Add New Product</h2><p class="font-body-sm text-body-sm text-primary-fixed mt-1 max-w-[280px]">Record a short video of your product. We pick the best photos. You approve them.</p><div class="mt-4 flex flex-col gap-2"><button class="w-full min-h-[52px] bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed rounded-xl px-4 flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold shadow-md active:scale-98 transition-transform"><span class="material-symbols-outlined text-[24px]">videocam</span><span>Add new product</span></button><div class="grid grid-cols-2 gap-2 mt-1"><button class="min-h-[44px] bg-primary-container/40 hover:bg-primary-container text-on-primary rounded-lg px-2 flex items-center justify-center gap-1.5 font-label-sm text-label-sm"><span class="material-symbols-outlined text-[18px]">mic</span><span>Voice Note</span></button><button class="min-h-[44px] bg-primary-container/40 hover:bg-primary-container text-on-primary rounded-lg px-2 flex items-center justify-center gap-1.5 font-label-sm text-label-sm"><span class="material-symbols-outlined text-[18px]">photo_camera</span><span>Upload Photos</span></button></div></div></div></div></section>
+<!-- Studio Status Summary Tiles (Bound to Token Counts) -->
+<section class="mx-margin"><div class="flex items-center justify-between px-1 mb-1 font-mono text-[10px] text-primary font-semibold"><span class="inline-flex items-center gap-1 bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>DB: dashboardCounts</span><span class="text-on-surface-variant/70 text-[9px]">schema: DashboardCountsDTO</span></div><div class="flex items-center justify-between mb-2"><h2 class="font-headline-sm text-headline-sm text-on-surface">Studio Pipeline</h2><span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Real-time update</span></div><div class="grid grid-cols-2 sm:grid-cols-2 gap-2.5"><div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between border border-outline-variant/30"><div class="flex items-center justify-between"><span class="w-7 h-7 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">edit_note</span></span><span class="font-mono text-[18px] font-bold text-on-surface-variant bg-surface-container px-1.5 rounded">{{counts.drafts}}</span></div><div class="mt-2"><p class="font-label-md text-label-md font-semibold text-on-surface">Drafts</p><p class="font-body-sm text-[11px] leading-tight text-on-surface-variant mt-0.5">Waiting for details</p></div></div><div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between border border-outline-variant/30"><div class="flex items-center justify-between"><span class="w-7 h-7 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center"><span class="material-symbols-outlined text-[18px] animate-spin" style="animation-duration: 4s;">sync</span></span><span class="font-mono text-[18px] font-bold text-primary bg-primary-fixed/40 px-1.5 rounded">{{counts.processing}}</span></div><div class="mt-2"><p class="font-label-md text-label-md font-semibold text-on-surface">Processing</p><p class="font-body-sm text-[11px] leading-tight text-on-surface-variant mt-0.5">Extracting angles &amp; details</p></div></div><div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between border border-secondary-container"><div class="flex items-center justify-between"><span class="w-7 h-7 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">rate_review</span></span><span class="font-mono text-[18px] font-bold text-secondary bg-secondary-container/40 px-1.5 rounded">{{counts.needsApproval}}</span></div><div class="mt-2"><p class="font-label-md text-label-md font-semibold text-on-surface">Needs Approval</p><p class="font-body-sm text-[11px] leading-tight text-on-surface-variant mt-0.5">Ready for your review</p></div></div><div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col justify-between border border-outline-variant/30"><div class="flex items-center justify-between"><span class="w-7 h-7 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">check_circle</span></span><span class="font-mono text-[18px] font-bold text-tertiary bg-tertiary-fixed/40 px-1.5 rounded">{{counts.published}}</span></div><div class="mt-2"><p class="font-label-md text-label-md font-semibold text-on-surface">Published</p><p class="font-body-sm text-[11px] leading-tight text-on-surface-variant mt-0.5">Active in catalog</p></div></div><div class="col-span-2 bg-surface-container-lowest p-3 rounded-xl shadow-sm flex items-center justify-between border border-outline-variant/30"><div class="flex items-center gap-3"><span class="w-7 h-7 rounded-lg bg-primary/10 text-primary flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">chat_bubble</span></span><div><p class="font-label-md text-label-md font-semibold text-on-surface">New Enquiries</p><p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Unanswered patron queries</p></div></div><span class="font-mono text-[18px] font-bold text-primary bg-primary-fixed/40 px-2.5 py-0.5 rounded">{{counts.newEnquiries}}</span></div></div></section>
+<!-- Pro-Artisan Video Tip Card -->
+<section class="mx-margin"><div class="bg-surface-container-low p-space-md rounded-xl shadow-sm relative border border-outline-variant/20"><div class="flex items-start gap-3"><div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[22px]">lightbulb</span></div><div class="min-w-0 flex-1"><h3 class="font-headline-sm text-[16px] leading-tight text-on-surface font-semibold">Video Tip for Best Results</h3><p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Record a short video of your product. We pick the best photos. You approve them.</p><div class="mt-3 flex items-center gap-2"><button class="min-h-[40px] px-3 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1.5 shadow-xs hover:bg-surface active:scale-95 transition-transform"><span class="material-symbols-outlined text-[18px]">play_circle</span><span>Watch Guide Video</span></button></div></div></div></div></section>
+<!-- Recent Listings / Products (Strictly Data Driven with Token notation) -->
+<section class="mx-margin"><div class="flex items-center justify-between px-1 mb-1 font-mono text-[10px] text-primary font-semibold"><span class="inline-flex items-center gap-1 bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>DB: products</span><span class="text-on-surface-variant/70 text-[9px]">schema: ProductListingItem[]</span></div><div class="flex items-center justify-between mb-2"><h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Listings</h2><a class="font-label-md text-label-md text-primary font-semibold hover:underline font-mono" href="#">View All ({{counts.published}})</a></div><div class="space-y-3"><!-- {{#each recentListings}} --><div class="bg-surface-container-lowest p-3 rounded-xl shadow-sm flex flex-col gap-2.5 border border-outline-variant/30"><div class="flex gap-3"><div class="w-20 h-20 rounded-lg overflow-hidden bg-surface-container shrink-0 relative flex items-center justify-center"><div class="w-full h-full bg-surface-container-high flex flex-col items-center justify-center text-on-surface-variant/60 font-mono text-[9px] p-1 text-center"><span class="material-symbols-outlined text-[20px] mb-0.5">image</span><span>{{product.imageUrl}}</span></div></div><div class="min-w-0 flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between gap-1"><span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-[10px] font-bold uppercase tracking-wider font-mono">{{product.status}}</span><span class="font-mono text-label-lg font-bold text-on-surface">₹{{product.price}}</span></div><h3 class="font-mono text-[14px] leading-tight text-on-surface font-semibold truncate mt-1.5">{{product.title}}</h3></div><p class="font-label-sm text-[11px] text-secondary font-medium">Status: {{product.status}}</p></div></div><div class="pt-2 flex items-center justify-end gap-2 bg-surface-container-low/50 px-2 py-1.5 rounded-lg"><button class="min-h-[36px] px-3 rounded-lg bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container">Dismiss</button><button class="min-h-[36px] px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center gap-1.5 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[16px]">edit</span><span>Manage Product</span></button></div></div><!-- {{/each}} --></div></section>
+<!-- Recent Buyer Enquiries (Data-Bound Micro-Region) -->
+<section class="mx-margin"><div class="flex items-center justify-between px-1 mb-1 font-mono text-[10px] text-primary font-semibold"><span class="inline-flex items-center gap-1 bg-primary/10 px-1.5 py-0.5 rounded border border-primary/20"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>DB: enquiries</span><span class="text-on-surface-variant/70 text-[9px]">schema: BuyerEnquiryDTO[]</span></div><div class="flex items-center justify-between mb-2"><h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Enquiries</h2><div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span><a class="font-label-md text-label-md text-primary font-semibold hover:underline font-mono" href="#">Inbox ({{counts.newEnquiries}} unread)</a></div></div><div class="space-y-3"><!-- {{#each recentEnquiries}} --><div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30"><div class="flex items-start justify-between gap-2"><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-[12px] font-mono"><span class="material-symbols-outlined text-[18px]">person</span></div><div><p class="font-mono text-[13px] font-semibold text-on-surface">{{enquiry.buyerName}}</p><p class="font-mono text-[11px] text-on-surface-variant">{{enquiry.timeAgo}}</p></div></div><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold font-mono">{{enquiry.status}}</span></div><div class="mt-2.5 p-2.5 rounded-lg bg-surface-container-low text-on-surface text-body-sm text-[13px] leading-relaxed font-mono">“{{enquiry.messagePreview}}”</div><div class="mt-2 flex items-center justify-between text-body-sm text-[11px] text-on-surface-variant font-mono"><span class="truncate">Item: {{enquiry.productTitle}}</span></div><div class="mt-3 flex items-center gap-2"><button class="flex-1 min-h-[44px] rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[18px]">reply</span><span>Reply via App</span></button><button class="min-h-[44px] px-3 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[18px]">chat</span><span>WhatsApp</span></button></div></div><!-- {{/each}} --></div></section>
+<!-- Artisan Voice Support & Toll-Free Assistance -->
+<section class="mx-margin"><div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-3 border border-outline-variant/30"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[22px]">support_agent</span></div><div class="min-w-0 flex-1"><h3 class="font-headline-sm text-[15px] leading-tight text-on-surface font-semibold">Need Help Listing or Packing?</h3><p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">Free craft-guide assistance for sellers</p></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1"><a class="min-h-[48px] px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center justify-center gap-2 font-label-md text-label-md font-semibold transition-colors font-mono" href="#"><span class="material-symbols-outlined text-primary text-[20px]">call</span><span>{{app.supportContact}}</span></a><button class="min-h-[48px] px-3 rounded-xl bg-tertiary-fixed hover:bg-tertiary text-on-tertiary-fixed hover:text-on-tertiary flex items-center justify-center gap-2 font-label-md text-label-md font-semibold transition-colors active:scale-95 font-mono" id="whatsappHelpBtn"><span class="material-symbols-outlined text-[20px]">forum</span><span>{{app.supportContact}}</span></button></div></div></section>
+</div>
+<!-- DASHBOARD VIEW: STATE 2 - LOADING SKELETON STATE PREVIEW -->
+<div class="hidden flex-col w-full pb-8 space-y-4 animate-pulse" id="view-skeleton">
+<div class="mx-margin">
+<div class="bg-primary/10 border border-primary/20 text-primary px-3 py-1.5 rounded-lg font-mono text-[11px] flex items-center justify-between">
+<span>⏳ SIMULATING SKELETON LOADER...</span>
+<span class="bg-primary/20 px-1.5 py-0.5 rounded text-[10px]">fetching REST payload</span>
+</div>
+</div>
+<!-- Skeleton Header Card -->
+<section class="mx-margin">
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/20 shadow-sm">
+<div class="flex items-start justify-between gap-4">
+<div class="space-y-2.5 flex-1">
+<div class="h-5 w-48 bg-surface-container-high rounded-full"></div>
+<div class="h-8 w-60 bg-surface-container rounded-lg"></div>
+<div class="h-4 w-40 bg-surface-container-high rounded"></div>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high shrink-0"></div>
+</div>
+<div class="mt-4 pt-3 h-10 bg-surface-container-low rounded-lg"></div>
+</div>
+</section>
+<!-- Skeleton CTA Hero -->
+<section class="mx-margin">
+<div class="h-44 bg-surface-container rounded-xl"></div>
+</section>
+<!-- Skeleton Pipeline Grid -->
+<section class="mx-margin">
+<div class="h-6 w-32 bg-surface-container-high rounded mb-2"></div>
+<div class="grid grid-cols-2 gap-2.5">
+<div class="h-24 bg-surface-container-lowest rounded-xl p-3 border border-outline-variant/20">
+<div class="w-7 h-7 rounded-lg bg-surface-container mb-2"></div>
+<div class="h-4 w-20 bg-surface-container rounded"></div>
+</div>
+<div class="h-24 bg-surface-container-lowest rounded-xl p-3 border border-outline-variant/20">
+<div class="w-7 h-7 rounded-lg bg-surface-container mb-2"></div>
+<div class="h-4 w-20 bg-surface-container rounded"></div>
+</div>
+<div class="h-24 bg-surface-container-lowest rounded-xl p-3 border border-outline-variant/20">
+<div class="w-7 h-7 rounded-lg bg-surface-container mb-2"></div>
+<div class="h-4 w-20 bg-surface-container rounded"></div>
+</div>
+<div class="h-24 bg-surface-container-lowest rounded-xl p-3 border border-outline-variant/20">
+<div class="w-7 h-7 rounded-lg bg-surface-container mb-2"></div>
+<div class="h-4 w-20 bg-surface-container rounded"></div>
+</div>
+</div>
+</section>
+<!-- Skeleton Products -->
+<section class="mx-margin space-y-3">
+<div class="h-6 w-36 bg-surface-container-high rounded mb-2"></div>
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20 flex gap-3">
+<div class="w-20 h-20 rounded-lg bg-surface-container shrink-0"></div>
+<div class="flex-1 space-y-2">
+<div class="h-4 w-3/4 bg-surface-container rounded"></div>
+<div class="h-3 w-1/2 bg-surface-container-high rounded"></div>
+<div class="h-5 w-24 bg-surface-container rounded"></div>
+</div>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/20 flex gap-3">
+<div class="w-20 h-20 rounded-lg bg-surface-container shrink-0"></div>
+<div class="flex-1 space-y-2">
+<div class="h-4 w-2/3 bg-surface-container rounded"></div>
+<div class="h-3 w-1/3 bg-surface-container-high rounded"></div>
+<div class="h-5 w-20 bg-surface-container rounded"></div>
+</div>
+</div>
+</section>
+<!-- Skeleton Enquiries -->
+<section class="mx-margin space-y-3">
+<div class="h-6 w-36 bg-surface-container-high rounded mb-2"></div>
+<div class="p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/20 space-y-2.5">
+<div class="flex gap-2 items-center">
+<div class="w-8 h-8 rounded-full bg-surface-container"></div>
+<div class="h-4 w-28 bg-surface-container rounded"></div>
+</div>
+<div class="h-12 bg-surface-container-low rounded-lg"></div>
+</div>
+</section>
+</div>
+<!-- DASHBOARD VIEW: STATE 3 - EMPTY / ZERO DATA STATE PREVIEW -->
+<div class="hidden flex-col w-full pb-8 space-y-4" id="view-empty"><div class="mx-margin"><div class="bg-secondary-container/30 border border-secondary/30 text-on-secondary-container px-3 py-1.5 rounded-lg font-mono text-[11px] flex items-center justify-between"><span>🌱 EMPTY STATE VIEW</span><span class="bg-secondary-container px-1.5 py-0.5 rounded text-[10px] font-bold">count: 0</span></div></div><section class="mx-margin"><div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30"><div class="flex items-center gap-3"><div class="w-12 h-12 rounded-xl bg-primary-fixed/40 flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[28px]">waving_hand</span></div><div><h2 class="font-headline-sm text-headline-sm text-on-surface">Namaste, {{user.name}}!</h2><p class="font-body-sm text-body-sm text-on-surface-variant">Welcome to your Kala Connect Digital Workshop</p></div></div></div></section><section class="mx-margin"><div class="bg-surface-container-lowest rounded-2xl p-6 text-center shadow-sm border border-dashed border-outline-variant/60 flex flex-col items-center"><div class="w-20 h-20 rounded-full bg-secondary-fixed/50 text-secondary flex items-center justify-center mb-3 shadow-inner"><span class="material-symbols-outlined text-[42px]" style="font-variation-settings: 'FILL' 1;">inventory_2</span></div><span class="inline-block px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-mono text-[11px] font-bold mb-2">0 Active Items</span><h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold max-w-[280px]">{{emptyMessage}}</h3><p class="font-body-md text-on-surface-variant text-sm mt-1 max-w-[300px]">Record a short video of your product. We pick the best photos. You approve them.</p><div class="mt-5 w-full max-w-xs space-y-2"><button class="w-full min-h-[48px] bg-primary hover:bg-primary-container text-on-primary rounded-xl px-4 flex items-center justify-center gap-2 font-label-lg text-label-lg font-bold shadow-md active:scale-98 transition-transform"><span class="material-symbols-outlined text-[22px]">videocam</span><span>+ Add new product</span></button></div></div></section></div><div class="hidden flex-col w-full pb-8 space-y-4" id="view-error"><div class="mx-margin"><div class="bg-error/10 border border-error/30 text-error px-3 py-1.5 rounded-lg font-mono text-[11px] flex items-center justify-between"><span>⚠️ ERROR LIFECYCLE STATE</span><span class="bg-error text-white px-1.5 py-0.5 rounded text-[10px] font-bold">HTTP 500</span></div></div><section class="mx-margin"><div class="bg-surface-container-lowest rounded-2xl p-6 text-center shadow-sm border border-error/30 flex flex-col items-center"><div class="w-16 h-16 rounded-full bg-error-container text-error flex items-center justify-center mb-3"><span class="material-symbols-outlined text-[36px]">error_outline</span></div><h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Unable to load studio dashboard</h3><p class="font-body-md text-on-surface-variant text-sm mt-1 max-w-[280px]">A connection error occurred while loading your listings and enquiries. Please try again.</p><div class="mt-5 w-full max-w-xs flex flex-col gap-2"><button class="w-full min-h-[44px] bg-primary hover:bg-primary-container text-on-primary rounded-xl px-4 flex items-center justify-center gap-2 font-label-md text-label-md font-semibold active:scale-98 transition-transform" onclick="setDashboardState('loaded')"><span class="material-symbols-outlined text-[18px]">refresh</span><span>Retry Loading (पुनः प्रयास करें)</span></button></div></div></section></div>
+<script>
+  // State Switcher Controller
+  function setDashboardState(state) {
+    const loadedView = document.getElementById('view-loaded');
+    const skeletonView = document.getElementById('view-skeleton');
+    const emptyView = document.getElementById('view-empty');
+
+    const btnLoaded = document.getElementById('state-loaded-btn');
+    const btnSkeleton = document.getElementById('state-skeleton-btn');
+    const btnEmpty = document.getElementById('state-empty-btn');
+
+    // Reset view visibility
+    loadedView.classList.add('hidden');
+    skeletonView.classList.add('hidden');
+    emptyView.classList.add('hidden');
+
+    // Reset button styling
+    [btnLoaded, btnSkeleton, btnEmpty].forEach(b => {
+      b.className = "px-2 py-1 rounded text-[10px] font-medium bg-black/30 text-surface-container-high hover:bg-white/10 transition-all border border-white/10";
+    });
+
+    if (state === 'loaded') {
+      loadedView.classList.remove('hidden');
+      btnLoaded.className = "px-2 py-1 rounded text-[10px] font-semibold bg-tertiary text-on-tertiary border border-tertiary-fixed/30 transition-all";
+    } else if (state === 'skeleton') {
+      skeletonView.classList.remove('hidden');
+      btnSkeleton.className = "px-2 py-1 rounded text-[10px] font-semibold bg-primary text-on-primary border border-primary-fixed/30 transition-all";
+    } else if (state === 'empty') {
+      emptyView.classList.remove('hidden');
+      btnEmpty.className = "px-2 py-1 rounded text-[10px] font-semibold bg-secondary-container text-on-secondary-container border border-secondary transition-all";
+    }
+  }
+
+  // Persona Switcher Controller
+  function switchPersona(type) {
+    const artisanBtn = document.getElementById('persona-artisan-btn');
+    const buyerBtn = document.getElementById('persona-buyer-btn');
+    const uidBadge = document.getElementById('active-uid-badge');
+
+    if (type === 'artisan') {
+      artisanBtn.className = "px-2 py-1 rounded font-semibold text-[10px] transition-all bg-primary text-on-primary flex items-center gap-1 shadow-xs";
+      buyerBtn.className = "px-2 py-1 rounded font-medium text-[10px] transition-all text-inverse-on-surface/80 hover:text-white hover:bg-white/10 flex items-center gap-1";
+      uidBadge.innerText = "artisan_usr_govind_01";
+      setDashboardState('loaded');
+    } else {
+      buyerBtn.className = "px-2 py-1 rounded font-semibold text-[10px] transition-all bg-secondary text-on-secondary flex items-center gap-1 shadow-xs";
+      artisanBtn.className = "px-2 py-1 rounded font-medium text-[10px] transition-all text-inverse-on-surface/80 hover:text-white hover:bg-white/10 flex items-center gap-1";
+      uidBadge.innerText = "buyer_usr_ananya_42";
+      alert("Switched Persona Context to Patron/Buyer (buyer_usr_ananya_42). In production, this redirects to the Patron Storefront Discovery experience.");
+    }
+  }
+
+  // Toast / Web-Share API
+  document.getElementById('shareStoreBtn')?.addEventListener('click', function() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Govind Ram Prajapati - Jaipur Blue Pottery Studio',
+        text: 'Explore authentic handcrafted GI-certified pottery directly from master artisan Govind Ram on Kala Connect.',
+        url: window.location.href,
+      }).catch(function() {});
+    } else {
+      alert('Storefront link copied to clipboard! (दुकान का लिंक कॉपी हो गया)');
+    }
+  });
+
+  document.getElementById('whatsappHelpBtn')?.addEventListener('click', function() {
+    const text = encodeURIComponent('Namaste Kala Connect studio team, I need help with my craft listing.');
+    window.open('https://wa.me/9118002085252?text=' + text, '_blank');
+  });
+</script>
+</main>
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_16px_rgba(24,25,50,0.06)]" data-active-classes="text-primary font-semibold"><div class="h-20 px-space-xs flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 transition-colors text-primary font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-sm text-label-sm text-center leading-none">Home</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-products" href="#"><span class="material-symbols-outlined text-[24px]">inventory_2</span><span class="font-label-sm text-label-sm text-center leading-none">Products</span></a><div class="flex items-center justify-center -translate-y-2"><a aria-label="Add Product" class="w-14 h-14 rounded-full bg-primary hover:bg-primary-container text-on-primary shadow-[0_4px_16px_rgba(55,101,107,0.35)] flex items-center justify-center transition-transform active:scale-95" data-path="add-product" href="#"><span class="material-symbols-outlined text-[30px]">add</span></a></div><a class="relative flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="enquiries" href="#"><div class="relative"><span class="material-symbols-outlined text-[24px]">chat_bubble</span><span class="absolute -top-1 -right-2 min-w-[16px] h-4 px-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] flex items-center justify-center font-bold">3</span></div><span class="font-label-sm text-label-sm text-center leading-none">Enquiries</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="price-helper" href="#"><span class="material-symbols-outlined text-[24px]">calculate</span><span class="font-label-sm text-label-sm text-center leading-none">AI Helper</span></a></div></nav>
+<script src="../nav_bridge.js"></script></body></html>

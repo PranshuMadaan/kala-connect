@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif:wght@600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "inverse-surface": "#2d2e48", "outline-variant": "#c0c8c9", "primary": "#37656b", "surface-dim": "#d8d7f8", "on-tertiary-fixed": "#0f1f11", "on-secondary-fixed": "#271900", "on-secondary-container": "#795c25", "inverse-primary": "#9fcfd5", "on-tertiary-fixed-variant": "#3a4b3a", "on-error": "#ffffff", "inverse-on-surface": "#f1efff", "on-primary-container": "#053d43", "primary-container": "#79a8ae", "on-surface-variant": "#404849", "error": "#ba1a1a", "secondary-fixed": "#ffdea7", "background": "#fcf8ff", "primary-fixed-dim": "#9fcfd5", "error-container": "#ffdad6", "on-tertiary": "#ffffff", "on-primary-fixed": "#001f23", "on-primary-fixed-variant": "#1c4d53", "on-background": "#181932", "secondary-container": "#ffd793", "surface": "#fcf8ff", "surface-container-high": "#e7e6ff", "outline": "#70797a", "tertiary-fixed": "#d4e8d1", "tertiary-container": "#92a590", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "tertiary-fixed-dim": "#b8ccb6", "primary-fixed": "#baebf1", "secondary": "#765a22", "surface-bright": "#fcf8ff", "on-secondary": "#ffffff", "surface-variant": "#e1e0ff", "on-primary": "#ffffff", "on-tertiary-container": "#2a3b2b", "secondary-fixed-dim": "#e7c17f", "surface-container-highest": "#e1e0ff", "on-surface": "#181932", "on-secondary-fixed-variant": "#5c420c", "surface-tint": "#37656b", "tertiary": "#516351", "surface-container-low": "#f5f2ff", "surface-container": "#eeecff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "margin-desktop": "2rem", "margin": "1rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "space-md": "1rem" }, fontFamily: { "body-sm": ["Inter"], "headline-lg": ["Noto Serif"], "label-md": ["Inter"], "display-lg": ["Noto Serif"], "headline-sm": ["Noto Serif"], "headline-md": ["Noto Serif"], "label-sm": ["Inter"], "display-lg-mobile": ["Noto Serif"], "label-lg": ["Inter"], "body-lg": ["Inter"], "headline-lg-mobile": ["Noto Serif"], "body-md": ["Inter"] }, fontSize: { "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "display-lg": ["40px", { "lineHeight": "52px", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "600" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "fontWeight": "600" }], "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Go back" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex flex-col min-w-0 pr-space-xs"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Order &amp; Commission Milestones / शिल्प कार्य प्रगति</h1></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Switch Language" class="h-11 px-space-sm rounded-full bg-surface-container flex items-center gap-space-xs text-on-surface hover:bg-surface-container-high active:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">translate</span><span class="font-label-md text-label-md font-semibold tracking-wide">EN | हिन्दी</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-24">
+<!-- Top State Filter Simulation Strip -->
+<div class="px-gutter pt-space-sm pb-space-xs bg-surface-container-low flex items-center justify-between gap-space-sm overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="material-symbols-outlined text-[16px] text-tertiary">tune</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">{{t.simulationStateLabel}}</span>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="px-space-sm py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm transition-all" id="btn-state-normal" onclick="switchMilestoneState('active')">{{t.stateStandard}}</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" id="btn-state-delay" onclick="switchMilestoneState('weather')">{{t.stateMonsoonDelay}}</button>
+<button class="px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" id="btn-state-ready" onclick="switchMilestoneState('inspection')">{{t.stateFinalReady}}</button>
+</div>
+</div>
+<!-- Dynamic Monsoon Weather Alert (Hidden by default, shown via simulation) -->
+<div class="hidden px-gutter py-space-sm bg-secondary-container text-on-secondary-container flex items-start gap-space-sm shadow-sm transition-all" id="monsoon-alert-banner">
+<span class="material-symbols-outlined text-[20px] text-secondary shrink-0 mt-0.5">cloud</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg font-semibold leading-tight">{{t.monsoonAdvisoryTitle}}</span>
+<p class="font-body-sm text-body-sm text-on-secondary-container/90 mt-0.5">{{t.monsoonAdvisoryBody}}</p>
+</div>
+</div>
+<!-- Section 1: Top Header & Commission Banner -->
+<section class="p-gutter flex flex-col gap-space-sm bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span id="header-status-badge">{{commission.statusBadge}}</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>GI #{{product.giRegistryNumber}}</span>
+</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-semibold leading-snug">{{commission.title}}</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">{{t.orderNumberPrefix}} #{{order.id}} • {{product.craftLineage}}</p>
+</div>
+<!-- Dispatch & Craft Provenance Pill Bar -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-8 h-8 rounded-full bg-primary-container/30 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{t.estimatedDispatchLabel}}</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">{{commission.estimatedCompletionDate}}</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[15px] text-tertiary">spa</span>
+<span class="font-label-sm text-label-sm font-semibold">{{t.heritageOrganicCertified}}</span>
+</div>
+</div>
+</section>
+<!-- Section 2: Artisan & Cooperative Liaison Quick Card -->
+<section class="mx-gutter mt-space-md p-gutter rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden bg-surface-container shrink-0">
+<img class="w-full h-full object-cover" data-alt="A dignified close-up portrait of master craftsperson in traditional Gujarati attire against a background of handloom threads and rustic workshop daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7nMAWmZWkkWjRQclhCuxcpkH18r9zHIecTsovMJmS8Pic9BD9HZXRUMpOS5n7a4IhX5k7m-c7dFFCWgUflcWL0_2Hfkh1rnJodhR_Vi2Ih_02x5G__P3D0zc48BIcuoarPA5HT33IRD1GZihz5S1kx-FVvZ34voyoWI5gVdm_2XdaGjBNIyrJg8OHnNrY9udpqfUfKMIgjrZ4zntnO6V2QBPHRL9zE-ofBaeSoq1T"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">{{artisan.displayName}}</h3>
+<span class="material-symbols-outlined text-tertiary text-[16px]" title="{{t.verifiedMasterArtisan}}">verified</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">{{artisan.village}}, {{artisan.district}}</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{t.cooperativeLiaison}}</span>
+<span class="font-label-md text-label-md font-medium text-primary">{{cooperative.liaisonName}}</span>
+</div>
+</div>
+<!-- Studio Audio Note / Dialect Voice Memo -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface">
+<button aria-label="{{t.playVoiceMemo}}" class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm active:scale-95 transition-all" id="audio-toggle-btn" onclick="toggleAudio()">
+<span class="material-symbols-outlined text-[20px]" id="audio-play-icon">play_arrow</span>
+</button>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">{{t.loomVoiceNote}}</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{artisan.voiceDuration}} • {{t.voiceDialectKutchhi}}</span>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1 transition-colors" onclick="toggleTranscript()">
+<span class="material-symbols-outlined text-[14px]">subtitles</span>
+<span id="transcript-btn-text">{{t.showTranscript}}</span>
+</button>
+</div>
+<!-- Waveform graphic visualization -->
+<div class="flex items-center gap-1 h-5 px-1 pt-1" id="audio-waveform-bars">
+<div class="flex-1 h-2 rounded-full bg-primary-container transition-all"></div>
+<div class="flex-1 h-3 rounded-full bg-primary-container transition-all"></div>
+<div class="flex-1 h-5 rounded-full bg-primary transition-all"></div>
+<div class="flex-1 h-4 rounded-full bg-primary-container transition-all"></div>
+<div class="flex-1 h-2 rounded-full bg-surface-container-highest transition-all"></div>
+<div class="flex-1 h-3 rounded-full bg-surface-container-highest transition-all"></div>
+<div class="flex-1 h-4 rounded-full bg-surface-container-highest transition-all"></div>
+<div class="flex-1 h-2 rounded-full bg-surface-container-highest transition-all"></div>
+<div class="flex-1 h-3 rounded-full bg-surface-container-highest transition-all"></div>
+<div class="flex-1 h-1.5 rounded-full bg-surface-container-highest transition-all"></div>
+</div>
+<!-- Audio Transcript Drawer -->
+<div class="hidden mt-1 p-space-sm rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm leading-relaxed shadow-inner" id="audio-transcript-box">
+<p class="italic text-on-surface-variant">"{{artisan.voiceTranscriptExcerpt}}"</p>
+<span class="font-label-sm text-label-sm text-primary font-semibold mt-1 block">{{t.translatedByGuildLiaison}}</span>
+</div>
+</div>
+</section>
+<!-- Section 3: Interactive Milestone Vertical Journey -->
+<section class="px-gutter mt-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">{{t.commissionJourneyTitle}}</h3>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_reset</span>
+        {{t.escrowProtectedMilestones}}
+      </span>
+</div>
+<!-- Vertical Timeline Container -->
+<div class="relative flex flex-col">
+<!-- Continuous vertical timeline stem -->
+<div class="absolute left-[19px] top-6 bottom-6 w-[2px] bg-surface-container-high -z-0"></div>
+<!-- Step 1: Kala Cotton Sourcing (Completed) -->
+<div class="relative z-10 flex items-start gap-space-sm pt-space-xs pb-space-lg">
+<div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex-1 p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">{{t.stepCompletedBadge}}</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{milestone.stage1Date}}</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-semibold text-on-surface">{{t.milestoneStage1Title}}</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">{{milestone.stage1Notes}}</p>
+<div class="flex items-center gap-1.5 mt-1 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span>{{t.organicCottonChainOfCustodyVerified}}</span>
+</div>
+</div>
+</div>
+<!-- Step 2: Dye Vat Fermentation (Completed with proof preview) -->
+<div class="relative z-10 flex items-start gap-space-sm pb-space-lg">
+<div class="w-10 h-10 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex-1 p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase">{{t.stepCompletedBadge}}</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{milestone.stage2Date}}</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-semibold text-on-surface">{{t.milestoneStage2Title}}</h4>
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-14 h-14 rounded-lg overflow-hidden bg-surface-container shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Clay fermentation dye pots filled with natural red madder root dye bubbles under warm morning sun in an open-air courtyard in Gujarat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4LsZBd5heQheiLiNfuVJDuVrxKNZw_gMpe7ljTY7bKYp0K8XE6ddl7jiqQPydTvpbcI1644-SFIx8Cuy5avaj827nH9FJo3bSLJnbvbxcbRMWZIJula4t1NPFxUctiDZe5x2-zUmlCVJxr1W0d7eUcohAF4hk99KONO5ULps-NnxZqfY6SQrQziKv065lBQr7qq5j1Ltf8IteqePMhl_CvpUOMns1pnKAIuaEeCfV"/>
+</div>
+<div class="flex flex-col min-w-0 justify-center">
+<span class="font-body-sm text-body-sm text-on-surface font-medium truncate">{{milestone.stage2VatComposition}}</span>
+<button class="font-label-sm text-label-sm text-primary font-semibold text-left flex items-center gap-0.5 mt-0.5">
+<span>{{t.viewLoomProof}}</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: CURRENT ACTIVE STAGE (Hero Card within Journey) -->
+<div class="relative z-10 flex items-start gap-space-sm pb-space-lg">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[20px] animate-spin" style="animation-duration: 4s;">sync</span>
+</div>
+<div class="flex-1 p-gutter rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span id="stage3-badge-label">{{t.activePitLoomWeaveBadge}}</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{milestone.stage3Date}}</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">{{t.milestoneStage3Title}}</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">{{milestone.stage3Subtitle}}</p>
+</div>
+<!-- Proof Image Showcase Card -->
+<div class="relative w-full h-52 rounded-xl overflow-hidden bg-surface-container shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Close-up macro photograph of a traditional pit loom weaving dense textured organic kala cotton with fine indigo warp and red weft geometric border motifs in natural artisan studio light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFzqaPNAmql3o-HB_PH0SKLoJhCjNCQmuJ10OAKVnZWfuk-NwV1wJkqO_k-R3rTUgL8PYpBJNxvuAhND0JUiL3zLh1KEP-r26Q-LhmjZxdS9SSSA3KDmHwZgs28sKYLBxRsiHEjmPixgPIDEMqefh9ZqarpAw0arzaf77OplbadcT6DnlmxKe7tE3aAmj8WpFsD6fk26-L_cu0eHTAyn8gaEy8k9beglkIJDJb84Hf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-black/20"></div>
+<!-- Inset Badge Authentic Studio Proof -->
+<div class="absolute top-space-sm left-space-sm px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-primary-container">photo_camera</span>
+<span>{{t.unfilteredStudioProof}}</span>
+</div>
+<!-- Completion overlay percentage -->
+<div class="absolute bottom-space-sm left-space-sm right-space-sm flex items-end justify-between text-inverse-on-surface">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-inverse-on-surface/80">{{t.loomDensityMetric}}</span>
+<span class="font-label-lg text-label-lg font-bold">{{milestone.stage3WeftProgress}}</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest/90 backdrop-blur text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" onclick="openProofModal()">
+<span class="material-symbols-outlined text-[14px]">fullscreen</span>
+<span>{{t.viewFullResolutionProof}}</span>
+</button>
+</div>
+</div>
+<!-- Artisan Quote Box -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">format_quote</span>
+<p class="font-body-sm text-body-sm text-on-surface italic leading-normal">
+              "{{milestone.artisanNote}}"
+            </p>
+</div>
+<!-- Primary Stage Approval Action -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full h-11 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm active:opacity-90 transition-all" id="approve-milestone-btn" onclick="approveCurrentStage()">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span id="approve-milestone-text">{{t.approveStageMilestone}}</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-center">{{t.approvalReleasesEscrowShare}}</span>
+</div>
+</div>
+</div>
+<!-- Step 4: River Washing & Sun Fixation (Upcoming) -->
+<div class="relative z-10 flex items-start gap-space-sm pb-space-lg opacity-70">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+</div>
+<div class="flex-1 p-space-sm rounded-xl bg-surface-container-lowest flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">{{t.stepUpcomingBadge}}</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{t.approximateDurationStage4}}</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-semibold text-on-surface">{{t.milestoneStage4Title}}</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">{{t.milestoneStage4Description}}</p>
+</div>
+</div>
+<!-- Step 5: Final Inspection & Muslin Pack (Upcoming) -->
+<div class="relative z-10 flex items-start gap-space-sm opacity-60">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">package_2</span>
+</div>
+<div class="flex-1 p-space-sm rounded-xl bg-surface-container-lowest flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">{{t.stepUpcomingBadge}}</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{t.approximateDurationStage5}}</span>
+</div>
+<h4 class="font-label-lg text-label-lg font-semibold text-on-surface">{{t.milestoneStage5Title}}</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">{{t.milestoneStage5Description}}</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Radical Escrow & Fair Remuneration Card -->
+<section class="mx-gutter mt-space-lg p-gutter rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">account_balance</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">{{t.radicalEscrowTitle}}</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">{{t.zeroPlatformCommission}}</span>
+</div>
+<!-- Escrow Metric summary -->
+<div class="flex items-baseline justify-between mt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{t.totalCraftRemuneration}}</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">₹{{commission.totalAmount}}</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">format_image_left</span>
+        {{t.escrowProtectedByBank}}
+      </span>
+</div>
+<!-- Progress bar split -->
+<div class="flex flex-col gap-1.5">
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden flex">
+<div class="h-full bg-tertiary rounded-l-full transition-all" style="width: 50%;"></div>
+<div class="h-full bg-primary-container transition-all" style="width: 35%;"></div>
+<div class="h-full bg-surface-container-high transition-all" style="width: 15%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="text-on-surface-variant">{{t.disbursedDirectLabel}}: <strong class="text-on-surface">₹{{commission.amountDisbursed}}</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="text-on-surface-variant">{{t.inEscrowLabel}}: <strong class="text-on-surface">₹{{commission.amountInEscrow}}</strong></span>
+</div>
+</div>
+</div>
+<!-- Collapsible Ledger Breakdown Toggle -->
+<button class="pt-space-xs flex items-center justify-between text-on-surface-variant hover:text-on-surface transition-colors" onclick="toggleLedger()">
+<span class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>{{t.viewTransparentLedger}}</span>
+</span>
+<span class="material-symbols-outlined text-[18px] transition-transform" id="ledger-chevron">expand_more</span>
+</button>
+<div class="hidden flex flex-col gap-space-xs p-space-sm rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm" id="transparent-ledger-details">
+<div class="flex justify-between py-1">
+<span class="text-on-surface-variant">{{t.rawKalaCottonFiberCost}}</span>
+<span class="font-medium">₹{{ledger.rawFiberCost}}</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-on-surface-variant">{{t.herbalMadderDyeCost}}</span>
+<span class="font-medium">₹{{ledger.dyeCost}}</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-on-surface-variant">{{t.masterLoomWeaverHonorarium}}</span>
+<span class="font-medium text-tertiary">₹{{ledger.weaverWages}} (100% direct)</span>
+</div>
+<div class="flex justify-between py-1">
+<span class="text-on-surface-variant">{{t.weavingGuildLiaisonSupport}}</span>
+<span class="font-medium">₹{{ledger.liaisonFee}}</span>
+</div>
+</div>
+</section>
+<!-- Sticky Mobile Action Footer -->
+<div class="fixed bottom-0 left-0 right-0 z-40 p-gutter bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,0,0,0.06)] flex flex-col gap-space-xs max-w-screen-md mx-auto">
+<div class="flex items-center gap-space-sm">
+<button aria-label="{{t.scheduleLoomCall}}" class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center justify-center shrink-0 active:scale-95 transition-all" onclick="scheduleVideoCall()">
+<span class="material-symbols-outlined text-[22px] text-primary">videocam</span>
+</button>
+<button class="flex-1 h-12 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 shadow-sm active:opacity-90 transition-all" onclick="openArtisanThread()">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>{{t.messageArtisanLiaison}}</span>
+</button>
+</div>
+<div class="flex items-center justify-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-tertiary">verified_user</span>
+<span class="font-label-sm text-label-sm text-center">{{t.directGuildRelayAssurance}}</span>
+</div>
+</div>
+<!-- Interactive Lightbox Proof Modal (Simulated) -->
+<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-gutter" id="proof-modal" onclick="closeProofModal()">
+<div class="relative max-w-sm w-full bg-surface-container-lowest rounded-xl p-gutter flex flex-col gap-space-sm shadow-xl" onclick="event.stopPropagation()">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">{{t.unfilteredStudioProof}}</span>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" onclick="closeProofModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="w-full h-64 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Macro detailed photo of high thread count organic Kala cotton weave on a wooden pit loom showcasing intricate indigo warp strands and textured selvedge edges in artisan workshop daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD62mrtOWFiZTJDUdRcdhxGnpv15MQQAajQtrnLXttvNRsryewOg6sxFlBxBUE74A3uPCPMHXI5LC3rX2W3aNYAw4N_BnlRVwra2nDIBfbzl_vcR7WJeDgIOLYCyYra3ehLud3x_bDrRUz-tfsn_ouVPMyBAcBDeIRmNHo2HYy2LXmlCgVn6-K6zWBn_IZJigCsRglZHJ8vPWGtmqUChGaeEYJXt1I20eF8tW7OReKk"/>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">{{t.proofModalTimestampCaption}} • {{milestone.stage3Date}}</p>
+<button class="w-full h-11 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold" onclick="closeProofModal()">{{t.closeProofViewer}}</button>
+</div>
+</div>
+</div>
+<script>
+  let isPlayingAudio = false;
+  let isTranscriptVisible = false;
+  let isLedgerVisible = false;
+
+  function toggleAudio() {
+    isPlayingAudio = !isPlayingAudio;
+    const playIcon = document.getElementById('audio-play-icon');
+    const waveform = document.getElementById('audio-waveform-bars');
+    if (isPlayingAudio) {
+      playIcon.innerText = 'pause';
+      waveform.querySelectorAll('div').forEach(bar => {
+        bar.classList.add('animate-pulse');
+      });
+    } else {
+      playIcon.innerText = 'play_arrow';
+      waveform.querySelectorAll('div').forEach(bar => {
+        bar.classList.remove('animate-pulse');
+      });
+    }
+  }
+
+  function toggleTranscript() {
+    isTranscriptVisible = !isTranscriptVisible;
+    const transcriptBox = document.getElementById('audio-transcript-box');
+    const transcriptBtnText = document.getElementById('transcript-btn-text');
+    if (isTranscriptVisible) {
+      transcriptBox.classList.remove('hidden');
+      transcriptBtnText.innerText = '{{t.hideTranscript}}';
+    } else {
+      transcriptBox.classList.add('hidden');
+      transcriptBtnText.innerText = '{{t.showTranscript}}';
+    }
+  }
+
+  function toggleLedger() {
+    isLedgerVisible = !isLedgerVisible;
+    const ledgerBox = document.getElementById('transparent-ledger-details');
+    const chevron = document.getElementById('ledger-chevron');
+    if (isLedgerVisible) {
+      ledgerBox.classList.remove('hidden');
+      chevron.style.transform = 'rotate(180deg)';
+    } else {
+      ledgerBox.classList.add('hidden');
+      chevron.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function openProofModal() {
+    const modal = document.getElementById('proof-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeProofModal() {
+    const modal = document.getElementById('proof-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function approveCurrentStage() {
+    const btn = document.getElementById('approve-milestone-btn');
+    const text = document.getElementById('approve-milestone-text');
+    text.innerText = '{{t.milestoneApprovedConfirmed}}';
+    btn.classList.remove('bg-primary');
+    btn.classList.add('bg-tertiary');
+  }
+
+  function switchMilestoneState(state) {
+    const alertBanner = document.getElementById('monsoon-alert-banner');
+    const statusBadge = document.getElementById('header-status-badge');
+    const stage3Badge = document.getElementById('stage3-badge-label');
+    const btnNormal = document.getElementById('btn-state-normal');
+    const btnDelay = document.getElementById('btn-state-delay');
+    const btnReady = document.getElementById('btn-state-ready');
+
+    [btnNormal, btnDelay, btnReady].forEach(b => {
+      b.className = 'px-space-sm py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all';
+    });
+
+    if (state === 'weather') {
+      btnDelay.className = 'px-space-sm py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm shadow-sm transition-all';
+      alertBanner.classList.remove('hidden');
+      statusBadge.innerText = '{{t.statusMonsoonWeatherHold}}';
+      stage3Badge.innerText = '{{t.loomMoistureStabilization}}';
+    } else if (state === 'inspection') {
+      btnReady.className = 'px-space-sm py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-label-sm shadow-sm transition-all';
+      alertBanner.classList.add('hidden');
+      statusBadge.innerText = '{{t.statusInspectionPending}}';
+      stage3Badge.innerText = '{{t.weaving100Completed}}';
+    } else {
+      btnNormal.className = 'px-space-sm py-1 rounded-full bg-primary text-on-primary font-label-sm text-label-sm shadow-sm transition-all';
+      alertBanner.classList.add('hidden');
+      statusBadge.innerText = '{{commission.statusBadge}}';
+      stage3Badge.innerText = '{{t.activePitLoomWeaveBadge}}';
+    }
+  }
+
+  function openArtisanThread() {
+    // Interactive feedback simulation for direct messaging relay
+  }
+
+  function scheduleVideoCall() {
+    // Interactive feedback simulation for scheduling live handloom video check-in
+  }
+</script></main><script src="../nav_bridge.js"></script></body></html>

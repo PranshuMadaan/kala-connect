@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"inverse-surface":"#2d2e48","outline-variant":"#c0c8c9","primary":"#37656b","surface-dim":"#d8d7f8","on-tertiary-fixed":"#0f1f11","on-secondary-fixed":"#271900","on-secondary-container":"#795c25","inverse-primary":"#9fcfd5","on-tertiary-fixed-variant":"#3a4b3a","on-error":"#ffffff","inverse-on-surface":"#f1efff","on-primary-container":"#053d43","primary-container":"#79a8ae","on-surface-variant":"#404849","error":"#ba1a1a","secondary-fixed":"#ffdea7","background":"#fcf8ff","primary-fixed-dim":"#9fcfd5","error-container":"#ffdad6","on-tertiary":"#ffffff","on-primary-fixed":"#001f23","on-primary-fixed-variant":"#1c4d53","on-background":"#181932","secondary-container":"#ffd793","surface":"#fcf8ff","surface-container-high":"#e7e6ff","outline":"#70797a","tertiary-fixed":"#d4e8d1","tertiary-container":"#92a590","surface-container-lowest":"#ffffff","on-error-container":"#93000a","tertiary-fixed-dim":"#b8ccb6","primary-fixed":"#baebf1","secondary":"#765a22","surface-bright":"#fcf8ff","on-secondary":"#ffffff","surface-variant":"#e1e0ff","on-primary":"#ffffff","on-tertiary-container":"#2a3b2b","secondary-fixed-dim":"#e7c17f","surface-container-highest":"#e1e0ff","on-surface":"#181932","on-secondary-fixed-variant":"#5c420c","surface-tint":"#37656b","tertiary":"#516351","surface-container-low":"#f5f2ff","surface-container":"#eeecff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-sm":"0.5rem","space-xl":"2rem","space-lg":"1.5rem","margin-desktop":"2rem","margin":"1rem","space-xs":"0.25rem","gutter-desktop":"1.5rem","space-md":"1rem"},"fontFamily":{"body-sm":["Inter"],"headline-lg":["Noto Serif"],"label-md":["Inter"],"display-lg":["Noto Serif"],"headline-sm":["Noto Serif"],"headline-md":["Noto Serif"],"label-sm":["Inter"],"display-lg-mobile":["Noto Serif"],"label-lg":["Inter"],"body-lg":["Inter"],"headline-lg-mobile":["Noto Serif"],"body-md":["Inter"]},"fontSize":{"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"display-lg":["40px",{"lineHeight":"52px","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"26px","fontWeight":"600"}],"headline-md":["22px",{"lineHeight":"30px","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}],"display-lg-mobile":["30px",{"lineHeight":"38px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(24,25,50,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="directory" href="#"><div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary-container"><span class="material-symbols-outlined text-[24px]">token</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Kala Connect</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase mt-space-xs">Craft Lineage Network</span></div></a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface rounded-lg font-semibold"><a class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="directory" href="#">Directory</a><a class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="provenance" href="#">Provenance</a><a class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="clusters" href="#">Clusters</a><a aria-current="page" class="px-space-md py-space-sm transition-colors bg-surface-container-high text-on-surface rounded-lg font-semibold" data-path="orders-and-commissions" href="#">Orders &amp; Commissions</a><a class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface font-label-lg text-label-lg transition-colors" data-path="guild-support" href="#">Guild Support</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low rounded-full text-on-surface"><span class="font-label-sm text-label-sm text-on-surface font-semibold">EN</span><span class="text-outline-variant font-label-sm text-label-sm">|</span><span class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface cursor-pointer">हिन्दी</span><span class="material-symbols-outlined text-[16px] text-on-surface-variant ml-space-xs">keyboard_arrow_down</span></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden md:flex flex-col text-right"><span class="font-label-lg text-label-lg text-on-surface leading-tight">{{user.name}}</span><span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">{{user.role}}</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Top Utility Context Bar: Breadcrumbs & Status -->
+<section class="w-full bg-surface-container-lowest shadow-sm">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop py-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<!-- Breadcrumb & IDs -->
+<div class="flex flex-col gap-space-xs">
+<nav class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" data-path="orders-and-commissions" href="#">{{t.breadcrumbOrders}}</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-semibold text-on-surface">{{order.id}}</span>
+</nav>
+<div class="flex items-center gap-space-sm flex-wrap mt-space-xs">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">{{commission.title}}</h1>
+<span class="px-space-sm py-space-xs rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center gap-space-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+              {{commission.statusBadge}}
+            </span>
+<span class="px-space-sm py-space-xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm flex items-center gap-space-xs font-semibold">
+<span class="material-symbols-outlined text-[14px] text-tertiary">verified_user</span>
+              GI #{{product.giRegistryNumber}} · {{t.authenticProvenance}}
+            </span>
+</div>
+</div>
+<!-- Primary Patron Actions -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-lg text-label-lg transition-colors flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+<span>{{t.downloadProvenanceCertificate}}</span>
+</button>
+<button class="px-space-md py-space-sm rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-colors flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span>{{t.directArtisanChat}}</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Workstation Layout -->
+<section class="max-w-7xl mx-auto w-full px-margin lg:px-margin-desktop py-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT 8 COLUMNS: Living Visual Timeline & Proof Repository -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- Visual Milestone Overview Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">all_inclusive</span>
+<span class="font-label-lg text-label-lg text-on-surface uppercase tracking-wider font-semibold">{{t.milestoneStage3Title}}</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container px-space-sm py-space-xs rounded font-medium">
+              {{t.milestoneProgress}}: 65% {{t.completed}}
+            </span>
+</div>
+<!-- Linear Track Indicator -->
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden flex">
+<div class="bg-tertiary h-full w-2/5" title="Stage 1 &amp; 2 Complete"></div>
+<div class="bg-primary h-full w-1/4 animate-pulse" title="Stage 3 in Progress (65%)"></div>
+<div class="bg-surface-container-high h-full w-7/20"></div>
+</div>
+<div class="grid grid-cols-5 text-center gap-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 1. {{t.stageFiber}}
+            </span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 2. {{t.stageVat}}
+            </span>
+<span class="font-label-sm text-label-sm text-primary font-bold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span> 3. {{t.stageWeave}}
+            </span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">4. {{t.stageBleach}}</span>
+<span class="font-label-sm text-label-sm text-outline-variant font-medium">5. {{t.stageDispatch}}</span>
+</div>
+</div>
+<!-- ACTIVE MILESTONE CARD: PIT-LOOM WEAVING & RAW PROOF -->
+<article class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden relative">
+<!-- Live Studio Header Ribbon -->
+<div class="bg-primary text-on-primary px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] animate-spin">sync</span>
+<span class="font-label-lg text-label-lg font-semibold tracking-wide uppercase">{{t.activeCustodyMilestone}}</span>
+</div>
+<span class="font-label-sm text-label-sm bg-on-primary/10 px-space-sm py-space-xs rounded font-medium">
+              {{t.recorded}}: {{milestone.stage3Date}}
+            </span>
+</div>
+<div class="p-space-lg flex flex-col gap-space-lg">
+<div>
+<div class="flex items-start justify-between gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest">Stage 03 Verification</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-space-xs">{{t.milestoneStage3Title}}</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                    {{t.pitLoomTechnicalDescription}} (Density: {{commission.weaveDensity}}). Extra weft motifs anchored with natural lac and indigo threads.
+                  </p>
+</div>
+<div class="hidden sm:flex flex-col items-end text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{t.allocatedMilestoneValue}}</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">₹{{commission.milestone3Amount}}</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">{{t.statusInEscrow}}</span>
+</div>
+</div>
+</div>
+<!-- Authentic Unfiltered Camera Proof Box -->
+<div class="relative rounded-xl overflow-hidden bg-inverse-surface group">
+<img class="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-102 transition-transform duration-500" data-alt="Close up archival studio photography of a traditional Indian pit-loom with authentic off-white organic Kala Cotton warp threads, raw wooden shuttle, and handwoven natural madder-red intricate geometric border patterns in Bhujodi Gujarat, warm sunlight highlighting woven cotton textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJIPYvWiOrGbmOtGSrki--tRxBULw767zXYM-mp_Df9224FEOxvypdYRNs5rbJKUbw7ipjdKTl8GlcG2RrOjGB-UpURPbver4H6ZKOTCCqiQ6KLoeK9KrYjlR1wK0oIoE2RPwcFuGz3M47qNMzAfZk7B442yp7a04OV_O9kBC1e3QG3O2UxwkeIHSN-TP6jGjVHL5Vwny-clhEQUSqjEYkK4EaLdru29z7a96cVSn"/>
+<div class="absolute top-space-md left-space-md flex flex-wrap gap-space-xs">
+<span class="px-space-sm py-space-xs rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-space-xs shadow">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">photo_camera</span>
+                  {{t.authenticUnfilteredStudioProof}}
+                </span>
+<span class="px-space-sm py-space-xs rounded bg-surface/90 backdrop-blur-md text-on-surface font-label-sm text-label-sm font-semibold shadow">
+                  RAW 4032 × 3024 · 300 DPI
+                </span>
+</div>
+<!-- Timestamp & Coordinates Overlay -->
+<div class="absolute bottom-space-md left-space-md right-space-md p-space-md rounded-lg bg-inverse-surface/90 backdrop-blur-md text-inverse-on-surface flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm text-body-sm font-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">farsight_digital</span>
+<span>{{artisan.village}}, {{artisan.district}} · Lat 23.242° N, Long 69.667° E</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span>{{milestone.stage3PhotoUrl}}</span>
+<button class="text-primary-fixed hover:text-surface underline font-label-sm text-label-sm">{{t.inspectMacroProof}}</button>
+</div>
+</div>
+</div>
+<!-- Artisan Dialect Voice & Note -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">{{artisan.displayName}} ({{t.artisanNoteTitle}})</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px]">translate</span>
+                  {{t.translateToPatronLanguage}}
+                </button>
+</div>
+<blockquote class="font-headline-sm text-headline-sm italic text-on-surface pl-space-sm">
+                “{{milestone.artisanNote}}”
+              </blockquote>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-space-sm">
+                {{t.translationLabel}}: "{{t.artisanNoteTranslatedSample}}"
+              </p>
+</div>
+<!-- Milestone Approval Trigger Zone -->
+<div class="pt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">shield</span>
+<span>{{t.escrowProtectionNotice}}</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-initial px-space-md py-space-sm rounded-lg bg-surface-container-high hover:bg-surface-dim text-on-surface font-label-lg text-label-lg transition-colors flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+<span>{{t.requestLoomVideoCheck}}</span>
+</button>
+<button class="flex-1 sm:flex-initial px-space-lg py-space-sm rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-colors flex items-center justify-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+<span>{{t.approveMilestone}}</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- PREVIOUS COMPLETED MILESTONES (STAGES 1 & 2) -->
+<div class="flex flex-col gap-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">
+            {{t.completedMilestonesHeading}}
+          </span>
+<!-- Stage 2 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary">STAGE 02 · {{t.statusDisbursed}}</span>
+<span class="text-outline-variant">·</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{milestone.stage2Date}}</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">{{t.milestoneStage2Title}}</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  {{t.stage2Description}} · {{t.verifiedBy}}: <span class="font-semibold text-on-surface">{{cooperative.liaisonName}}</span>
+</p>
+</div>
+</div>
+<!-- Mini Audio / Proof Player -->
+<div class="flex items-center gap-space-sm pl-space-xl sm:pl-0">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-sm py-space-xs rounded-full">
+<button class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface pr-space-xs font-medium">{{milestone.stage2AudioNote}} (0:48)</span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">₹{{commission.milestone2Amount}}</span>
+</div>
+</div>
+<!-- Stage 1 Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary">STAGE 01 · {{t.statusDisbursed}}</span>
+<span class="text-outline-variant">·</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{milestone.stage1Date}}</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">{{t.milestoneStage1Title}}</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  {{t.stage1Description}} · {{t.seedLot}}: <span class="font-mono text-body-sm">{{milestone.seedBatchNumber}}</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pl-space-xl sm:pl-0">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span> {{milestone.stage1PhotoUrl}}
+              </span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface ml-space-sm">₹{{commission.milestone1Amount}}</span>
+</div>
+</div>
+</div>
+<!-- UPCOMING ROADMAP MILESTONES (STAGES 4 & 5) -->
+<div class="flex flex-col gap-space-md opacity-75">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">
+            {{t.upcomingMilestonesHeading}}
+          </span>
+<!-- Stage 4 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">STAGE 04 · {{t.statusPending}}</span>
+<span class="text-outline-variant">·</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{t.estStart}}: {{milestone.stage4Estimate}}</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">{{t.milestoneStage4Title}}</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  {{t.stage4SunBleachingAdvisory}}
+                </p>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface-variant">₹{{commission.milestone4Amount}}</span>
+</div>
+<!-- Stage 5 -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">STAGE 05 · {{t.statusPending}}</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">{{t.milestoneStage5Title}}</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                  {{t.stage5Description}}
+                </p>
+</div>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface-variant">₹{{commission.milestone5Amount}}</span>
+</div>
+</div>
+<!-- PATRON-ARTISAN LIAISON DIALOGUE & QUICK INQUIRY RELAY -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">record_voice_over</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">{{t.artisanLiaisonRelay}}</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              {{t.activeRadioNode}}
+            </span>
+</div>
+<!-- Message Thread Cards -->
+<div class="space-y-space-md pt-space-xs">
+<!-- Weaver & Liaison voice note -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">{{artisan.displayName}}</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">via {{cooperative.liaisonName}} ({{t.fieldLiaisonRole}})</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">{{dialogue.latestTimestamp}}</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-space-xs">
+                "{{dialogue.weaverMessageText}}"
+              </p>
+<!-- Simulated Waveform Snippet -->
+<div class="mt-space-xs p-space-xs bg-surface-container rounded-lg flex items-center gap-space-md">
+<button class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+<div class="flex-1 flex items-center gap-1 h-6">
+<span class="w-1 bg-secondary rounded-full h-3"></span>
+<span class="w-1 bg-secondary rounded-full h-5"></span>
+<span class="w-1 bg-secondary rounded-full h-2"></span>
+<span class="w-1 bg-secondary rounded-full h-6"></span>
+<span class="w-1 bg-secondary rounded-full h-4"></span>
+<span class="w-1 bg-secondary rounded-full h-5"></span>
+<span class="w-1 bg-secondary rounded-full h-2"></span>
+<span class="w-1 bg-secondary rounded-full h-4"></span>
+<span class="w-1 bg-outline-variant rounded-full h-3"></span>
+<span class="w-1 bg-outline-variant rounded-full h-2"></span>
+<span class="w-1 bg-outline-variant rounded-full h-5"></span>
+<span class="w-1 bg-outline-variant rounded-full h-3"></span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant pr-space-sm font-mono">0:32 / {{artisan.voiceDuration}}</span>
+</div>
+</div>
+<!-- Patron response -->
+<div class="p-space-md rounded-lg bg-surface-container-high/40 flex flex-col gap-space-xs ml-space-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">{{user.name}} ({{t.patronRole}})</span>
+<span class="font-label-sm text-label-sm text-outline">{{dialogue.patronTimestamp}}</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                "{{dialogue.patronMessageText}}"
+              </p>
+</div>
+</div>
+<!-- Quick Actions & Inquiry Dispatch -->
+<div class="pt-space-sm border-t-0 flex flex-wrap gap-space-xs">
+<button class="px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">help</span>
+              {{t.inquireAboutLoomProgress}}
+            </button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span>
+              {{t.scheduleLoomInspectionCall}}
+            </button>
+<button class="px-space-md py-space-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">photo_library</span>
+              {{t.requestHighResPhotos}}
+            </button>
+</div>
+</section>
+</div>
+<!-- RIGHT 4 COLUMNS: Craft Technical Dossier & Escrow Breakdown -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Master Artisan Dossier Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-full object-cover shadow-sm" data-alt="Dignified portrait of an Indian master weaver in traditional white kurta and turban standing in his open-air Kutchi weaving workshop with looms in soft natural sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7lZuaw8Ec93cKb_-DdG8u07ifK7pKXFtVGxp2Y_zlAgaOHSAebaq2EYGukQ0kiwroHB2r4WDffhsB8GWcqU01FIWbJ8rBypnOEGVkFnwOidM9wkteOVeMd7mNEfhreK93ZCGt8jYuV-p7Jq4Oy0-tMoaHMRW6pqySaz12ePZTtPGoL4QZBDYl0nJmyI-CvEQBuUBx4aErV8IWPoS-MELtqd9s7j7FvpFXi4fA-HlG"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-tertiary-fixed-dim border-2 border-surface-container-lowest flex items-center justify-center" title="GI Verified Weaver">
+<span class="material-symbols-outlined text-[10px] text-on-tertiary-fixed">verified</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">{{artisan.title}}</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">{{artisan.displayName}}</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">{{artisan.village}}, {{artisan.district}}</span>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs text-body-sm">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-label-sm text-label-sm">{{t.lineageGuildCooperative}}:</span>
+<span class="font-semibold text-on-surface text-right">{{artisan.guildCooperative}}</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-label-sm text-label-sm">{{t.regionalClusterLiaison}}:</span>
+<span class="font-medium text-on-surface">{{cooperative.liaisonName}}</span>
+</div>
+</div>
+<!-- Direct Voice Greeting Player -->
+<button class="w-full py-space-sm px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center justify-between">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">mic</span>
+<span>{{t.playVoiceUpdate}} ({{artisan.dialectTag}})</span>
+</span>
+<span class="font-mono text-body-sm text-on-surface-variant">{{artisan.voiceDuration}}</span>
+</button>
+</div>
+<!-- Commission Technical Specification Spec Sheet -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">{{t.commissionParameters}}</h3>
+</div>
+<div class="rounded-lg overflow-hidden">
+<img class="w-full h-44 object-cover" data-alt="Editorial product still of unbleached handcrafted Indian Kala cotton saree with intricate dark blue indigo block prints and madder red handwoven border edges draped over textured rustic wooden block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCK4xVjihVLag18vc0Zwj4Lk6LAcMU5jGGj9hmk2oDLBPDbQCGqsBy28RLtCaFPI6GDB0AgsMFfBfC3Z2w1uG3LVWK3R4-232TL7XOKiEUptl7pu35B4BE4Gu9x5Ve7vmIY1kAC3EQEn5d7lqSxWzetR6MQkqq3PxSFNvA2RzhmvSi4K0v7SX8st0WBclc9-n_GMMeSqiQYgN0M810trHMV7v7x06CW2a-_X2e5gMP"/>
+</div>
+<div class="flex flex-col gap-space-sm divide-y-0 text-body-sm font-body-sm">
+<div class="flex justify-between py-space-xs">
+<span class="text-on-surface-variant">{{t.craftDiscipline}}</span>
+<span class="font-semibold text-on-surface">{{commission.craftType}}</span>
+</div>
+<div class="flex justify-between py-space-xs">
+<span class="text-on-surface-variant">{{t.finishedDimensions}}</span>
+<span class="font-medium text-on-surface">{{commission.customDimensions}}</span>
+</div>
+<div class="flex justify-between py-space-xs">
+<span class="text-on-surface-variant">{{t.weaveDensity}}</span>
+<span class="font-medium text-on-surface">{{commission.weaveDensity}}</span>
+</div>
+<div class="flex justify-between py-space-xs">
+<span class="text-on-surface-variant">{{t.estimatedCompletion}}</span>
+<span class="font-semibold text-primary">{{commission.estimatedCompletionDate}}</span>
+</div>
+</div>
+<!-- Weather & Artisan Rhythm Advisory -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">wb_sunny</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">{{t.weatherRhythmAdvisoryTitle}}</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs leading-relaxed">
+                "{{commission.seasonalAdvisory}}"
+              </p>
+</div>
+</div>
+</div>
+<!-- Radical Transparency Remuneration & Escrow Ledger -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">account_balance_wallet</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">{{t.escrowDisbursementLedger}}</h3>
+</div>
+<span class="font-label-sm text-label-sm font-mono text-tertiary bg-tertiary-fixed px-space-xs py-0.5 rounded">100% {{t.artisanRetained}}</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Total amount callout -->
+<div class="p-space-md rounded-lg bg-surface-container flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">{{t.totalEscrowContract}}</span>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight">₹{{commission.totalAmount}}</div>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">{{t.statusDisbursed}}</span>
+<div class="font-headline-sm text-headline-sm text-tertiary">₹{{commission.disbursedSubtotal}}</div>
+</div>
+</div>
+<!-- Ledger Breakdown Items -->
+<div class="flex flex-col gap-space-xs pt-space-xs text-body-sm">
+<!-- Item 1 -->
+<div class="p-space-sm rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">1. {{t.milestoneStage1Title}}</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">{{t.statusDisbursed}}</span>
+</div>
+<span class="font-semibold text-on-surface">₹{{commission.milestone1Amount}}</span>
+</div>
+<!-- Item 2 -->
+<div class="p-space-sm rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">2. {{t.milestoneStage2Title}}</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">{{t.statusDisbursed}}</span>
+</div>
+<span class="font-semibold text-on-surface">₹{{commission.milestone2Amount}}</span>
+</div>
+<!-- Item 3 ACTIVE -->
+<div class="p-space-sm rounded bg-primary-container/20 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">3. {{t.milestoneStage3Title}}</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">{{t.statusInEscrow}} · {{t.heldSecured}}</span>
+</div>
+<span class="font-bold text-primary">₹{{commission.milestone3Amount}}</span>
+</div>
+<!-- Item 4 -->
+<div class="p-space-sm rounded bg-surface-container-low/60 flex items-center justify-between opacity-80">
+<div class="flex flex-col">
+<span class="text-on-surface-variant">4. {{t.milestoneStage4Title}}</span>
+<span class="font-label-sm text-label-sm text-outline">{{t.statusPending}}</span>
+</div>
+<span class="text-on-surface-variant font-medium">₹{{commission.milestone4Amount}}</span>
+</div>
+<!-- Item 5 -->
+<div class="p-space-sm rounded bg-surface-container-low/60 flex items-center justify-between opacity-80">
+<div class="flex flex-col">
+<span class="text-on-surface-variant">5. {{t.milestoneStage5Title}}</span>
+<span class="font-label-sm text-label-sm text-outline">{{t.statusPending}}</span>
+</div>
+<span class="text-on-surface-variant font-medium">₹{{commission.milestone5Amount}}</span>
+</div>
+<!-- Zero Middleman Guarantee -->
+<div class="mt-space-xs p-space-sm rounded bg-tertiary-fixed/40 flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed font-semibold">{{t.zeroIntermediaryMarkup}}</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">₹0.00</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<!-- Diagnostic & Verification Footnote Bar -->
+<section class="w-full bg-surface-container-high/30 mt-space-xl py-space-md">
+<div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm font-mono text-outline">DB: commission.detail[{{order.id}}]</span>
+<span class="font-label-sm text-label-sm font-mono text-outline">DB: milestone.timeline[{{commission.milestoneActiveId}}]</span>
+<span class="font-label-sm text-label-sm font-mono text-outline">DB: escrow.ledger[{{escrow.contractAddress}}]</span>
+<span class="font-label-sm text-label-sm font-mono text-outline">DB: artisan.dialogue[{{dialogue.threadId}}]</span>
+</div>
+<!-- Edge-case Preview Simulator Switchers -->
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant pr-space-xs font-semibold">{{t.previewState}}:</span>
+<button class="px-space-xs py-0.5 rounded text-on-surface bg-surface-container-high font-label-sm text-label-sm hover:bg-surface-dim font-medium">
+          {{t.stateActiveWeave}}
+        </button>
+<button class="px-space-xs py-0.5 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium">
+          {{t.stateMonsoonPause}}
+        </button>
+<button class="px-space-xs py-0.5 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium">
+          {{t.stateDeliveredGI}}
+        </button>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_6px_rgba(24,25,50,0.02)]"><div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop"><div class="md:col-span-5 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-on-primary-container"><span class="material-symbols-outlined text-[20px]">token</span></div><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Kala Connect</span></div><p class="font-body-md text-body-md text-on-surface-variant pr-space-lg">The Kala Connect Manifesto reaffirms human lineage, material authenticity, and restorative economics. We bind regional artisan guilds directly with conscious stewards across the globe, protecting intellectual heritage and geographic provenance from anonymous extraction.</p><div class="flex items-center gap-space-sm mt-space-xs"><span class="material-symbols-outlined text-secondary text-[20px]">verified</span><span class="font-label-sm text-label-sm text-secondary font-semibold uppercase tracking-wider">GI Lineage Registered &amp; Verified Federation</span></div></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider mb-space-xs">Craft Directory &amp; Archives</span><ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface-variant"><li class="hover:text-primary transition-colors"><a data-path="directory" href="#">Handloom &amp; Heritage Textiles</a></li><li class="hover:text-primary transition-colors"><a data-path="directory" href="#">Terracotta &amp; Clay Studios</a></li><li class="hover:text-primary transition-colors"><a data-path="directory" href="#">Dhokra &amp; Lost-Wax Metallurgy</a></li><li class="hover:text-primary transition-colors"><a data-path="directory" href="#">Natural Pigments &amp; Miniature Art</a></li><li class="hover:text-primary transition-colors"><a data-path="clusters" href="#">Regional Guild Clusters</a></li></ul></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-surface font-semibold uppercase tracking-wider mb-space-xs">Provenance &amp; Custody</span><p class="font-body-sm text-body-sm text-on-surface-variant">Every batch and custom commission is logged under sovereign artisan federation custody seals guaranteeing authentic Geographic Indication (GI) lineages.</p><div class="mt-space-md pt-space-md bg-surface-container rounded-lg p-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant block">Sovereign Guild Support Desk</span><span class="font-label-lg text-label-lg text-primary block mt-space-xs font-semibold">federation@kalaconnect.org</span></div></div></div><div class="mt-space-xl pt-space-lg bg-surface-container-high/30 rounded-lg p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md text-center sm:text-left"><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Kala Connect Ethical Guild Federation. All regional lineages and masterworks registered.</p><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-on-surface" data-path="provenance" href="#">Lineage Charter</a><a class="hover:text-on-surface" data-path="guild-support" href="#">Federation Ethics</a><a class="hover:text-on-surface" data-path="orders-and-commissions" href="#">Escrow Terms</a></div></div></div></footer><script src="../nav_bridge.js"></script></body></html>

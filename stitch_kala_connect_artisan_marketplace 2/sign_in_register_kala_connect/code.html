@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary": "#37656b", "surface-variant": "#e1e0ff", "secondary-fixed-dim": "#e7c17f", "on-secondary-fixed-variant": "#5c420c", "surface-container-lowest": "#ffffff", "error-container": "#ffdad6", "inverse-on-surface": "#f1efff", "tertiary-container": "#92a590", "on-tertiary-container": "#2a3b2b", "inverse-primary": "#9fcfd5", "on-tertiary": "#ffffff", "secondary-fixed": "#ffdea7", "on-tertiary-fixed": "#0f1f11", "tertiary-fixed-dim": "#b8ccb6", "surface-container-highest": "#e1e0ff", "outline": "#70797a", "on-secondary": "#ffffff", "tertiary-fixed": "#d4e8d1", "surface-container-high": "#e7e6ff", "on-primary-fixed-variant": "#1c4d53", "surface-dim": "#d8d7f8", "primary-fixed-dim": "#9fcfd5", "on-secondary-fixed": "#271900", "on-primary-fixed": "#001f23", "primary-container": "#79a8ae", "secondary": "#765a22", "secondary-container": "#ffd793", "on-secondary-container": "#795c25", "on-primary-container": "#053d43", "on-primary": "#ffffff", "on-error-container": "#93000a", "surface-container-low": "#f5f2ff", "surface-container": "#eeecff", "surface-tint": "#37656b", "on-error": "#ffffff", "outline-variant": "#c0c8c9", "on-surface": "#181932", "surface": "#fcf8ff", "on-tertiary-fixed-variant": "#3a4b3a", "background": "#fcf8ff", "primary-fixed": "#baebf1", "tertiary": "#516351", "inverse-surface": "#2d2e48", "surface-bright": "#fcf8ff", "on-surface-variant": "#404849", "on-background": "#181932", "error": "#ba1a1a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-md": "1rem", "gutter": "1rem", "margin": "1rem", "gutter-desktop": "1.5rem", "space-xs": "0.25rem" }, "fontFamily": { "label-md": ["Inter"], "body-md": ["Inter"], "label-lg": ["Inter"], "display-lg": ["Noto Serif"], "headline-lg-mobile": ["Noto Serif"], "display-lg-mobile": ["Noto Serif"], "headline-md": ["Noto Serif"], "body-sm": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "headline-sm": ["Noto Serif"], "headline-lg": ["Noto Serif"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}], "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}], "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "display-lg": ["40px", {"lineHeight": "52px", "fontWeight": "600"}], "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "display-lg-mobile": ["30px", {"lineHeight": "38px", "fontWeight": "600"}], "headline-md": ["22px", {"lineHeight": "30px", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}], "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}], "headline-sm": ["18px", {"lineHeight": "26px", "fontWeight": "600"}], "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Go back" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-full transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">Kala Connect</span><span class="font-label-sm text-label-sm text-primary tracking-normal leading-tight">कला कनेक्ट</span></div></div><div class="flex items-center gap-space-sm"><div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary-container text-on-secondary-container"><span class="material-symbols-outlined text-[16px]">palette</span><span class="font-label-sm text-label-sm">Artisan</span></div><button aria-label="Select language" class="min-h-[44px] px-space-sm rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-space-xs transition-colors" type="button"><span class="font-label-md text-label-md font-semibold">EN | हिन्दी</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">translate</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full bg-surface pt-16"><div class="flex flex-col w-full pb-safe">
+<!-- System Header Info Bar (Redirect Target & Global Context) -->
+<div class="relative bg-surface-container-low px-gutter py-space-sm flex items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">navigation</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">
+        Redirect to: <span class="font-semibold text-primary">{{session.redirectTo}}</span>
+</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[12px]">database</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide uppercase">DB: app.config</span>
+</div>
+</div>
+<!-- Decorative Contextual Artisan Visual Banner -->
+<div class="px-gutter pt-space-md">
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-container shadow-sm p-space-md flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close-up of skilled Indian rural artisan hands carefully dyeing organic handloom cotton threads with natural indigo vat and warm earthy pigments in a bright terracotta studio courtyard with soft sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmpXASV-9nkDMKoGz7glKYMC70ENnYGs8Q2MYU1-kKRPbxdWiGw2aSF7z_lu3n2Ors_W0rd_WLgnZKiGnAfyYkc_2vNTGrmfyZDcGX27kgTUwrbmefN1HgdMaUNAoM0o1cflkRX7hs7COc6AM-AarCyIeqmdiBZ1XtJEzvvZnYssT-KyU5JQOHVgng86qpqDJDKJ_J1HM1e9hVYGtexJW9GB5vsdrEB7-15VOddhUd"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="inline-flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Heritage Craft Commons</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-snug">कला और कारीगर</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Bridging conscious patrons &amp; master makers</p>
+</div>
+</div>
+</div>
+<!-- Auth Mode Segmented Control Bar -->
+<div class="px-gutter pt-space-md">
+<div class="relative bg-surface-container rounded-xl p-1 flex items-center shadow-sm">
+<div class="absolute -top-2.5 right-3 px-2 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant z-10 shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">tune</span>
+<span class="font-label-sm text-label-sm uppercase font-semibold">DB: auth.session</span>
+</div>
+<button aria-selected="true" class="flex-1 py-2.5 px-space-sm rounded-lg text-center transition-all flex flex-col items-center justify-center bg-surface-container-lowest text-primary shadow-sm" id="tab-btn-signin" onclick="switchAuthMode('signin')" type="button">
+<span class="font-label-lg text-label-lg leading-tight">Sign In</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">लॉग इन करें</span>
+</button>
+<button aria-selected="false" class="flex-1 py-2.5 px-space-sm rounded-lg text-center transition-all flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface" id="tab-btn-register" onclick="switchAuthMode('register')" type="button">
+<span class="font-label-lg text-label-lg leading-tight">Register / New</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">नया खाता बनाएं</span>
+</button>
+</div>
+<!-- State token readout -->
+<div class="flex items-center justify-between px-space-xs pt-1.5 pb-space-xs text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Active mode:</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">{{auth.mode}}</span>
+</div>
+</div>
+<!-- MAIN TAB CONTENT CONTAINER -->
+<div class="px-gutter space-y-space-md">
+<!-- SIGN IN PANEL -->
+<div class="space-y-space-md block" id="panel-signin">
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<!-- DB Badge -->
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">badge</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase">DB: auth.credentials</span>
+</div>
+<div class="pr-24 mb-space-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Welcome Back</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Enter verified phone or email to receive code</p>
+</div>
+<form class="space-y-space-md" onsubmit="event.preventDefault();">
+<!-- Phone / Email Input Field -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1" for="phone-or-email-input">
+<span>Phone (+91) or Email</span>
+<span class="text-error font-semibold">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-primary tracking-tight">Bound: {{form.phoneOrEmail}}</span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">contact_phone</span>
+<input class="w-full h-12 pl-10 pr-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/60" id="phone-or-email-input" placeholder="Enter phone (+91) or email" type="text" value="{{form.phoneOrEmail}}"/>
+</div>
+</div>
+<!-- 6-Digit OTP Field -->
+<div class="space-y-1.5 pt-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold">One-Time Passcode (OTP)</label>
+<span class="font-label-sm text-label-sm text-primary">Bound: {{form.otp}}</span>
+</div>
+<!-- OTP Boxes Grid -->
+<div class="grid grid-cols-6 gap-2">
+<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm text-on-surface text-center shadow-sm">
+                •
+              </div>
+<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm text-on-surface text-center shadow-sm">
+                •
+              </div>
+<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm text-on-surface text-center shadow-sm">
+                •
+              </div>
+<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm text-on-surface text-center shadow-sm">
+                •
+              </div>
+<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm text-on-surface text-center shadow-sm">
+                •
+              </div>
+<div class="h-12 rounded-lg bg-surface-container-low flex items-center justify-center font-headline-sm text-headline-sm text-on-surface text-center shadow-sm">
+                •
+              </div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Didn't receive OTP?</span>
+<button class="font-label-sm text-label-sm font-semibold text-secondary hover:text-on-secondary-fixed-variant transition-colors flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span>Resend OTP / फिर भेजें</span>
+</button>
+</div>
+</div>
+<!-- Primary Action CTA -->
+<button class="w-full h-12 rounded-lg bg-primary hover:bg-on-primary-fixed-variant active:scale-[0.99] text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs shadow-md transition-all mt-space-md" type="submit">
+<span>Continue / आगे बढ़ें</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Auth Error Notification Slot -->
+<div class="relative bg-error-container rounded-xl p-space-md text-on-error-container shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-error">error</span>
+<span class="font-label-md text-label-md font-semibold text-error">Auth Status Notice</span>
+</div>
+<div class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-error-container text-label-sm font-label-sm font-semibold uppercase flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[11px]">report_problem</span>
+<span>DB: auth.errors</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 rounded-lg p-space-sm flex items-start justify-between gap-space-sm">
+<div class="space-y-0.5 min-w-0">
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">Recorded errors:</p>
+<p class="font-body-sm text-body-sm text-on-error-container font-mono break-all">{{form.errors}}</p>
+</div>
+<button class="shrink-0 px-space-sm py-1 rounded bg-error text-on-error font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[14px]">replay</span>
+<span>Retry</span>
+</button>
+</div>
+</div>
+</div>
+<!-- REGISTER TAB CONTENT -->
+<div class="space-y-space-md hidden" id="panel-register">
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<!-- DB Badge -->
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">group</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase">DB: register.role</span>
+</div>
+<div class="pr-24 mb-space-sm">
+<p class="font-label-sm text-label-sm text-primary uppercase font-semibold tracking-wider">Account Creation</p>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">I want to... / मैं चाहता हूँ...</h2>
+</div>
+<!-- Role Indicator Pill -->
+<div class="mb-space-md inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">person_search</span>
+<span class="font-label-sm text-label-sm">Role State:</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">{{register.role}}</span>
+</div>
+<!-- Role Interactive Selection Cards -->
+<div class="space-y-space-md">
+<!-- Card 1: Buyer -->
+<div class="relative rounded-xl p-space-md cursor-pointer transition-all bg-surface-container-low hover:bg-surface-container shadow-sm space-y-space-xs" id="role-card-buyer" onclick="selectRole('buyer')">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Buy handmade crafts</h3>
+<span class="font-label-sm text-label-sm text-primary">हस्तशिल्प संरक्षक (Buyer)</span>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm" id="check-icon-buyer">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-1 leading-relaxed">
+              Discover authentic crafts directly from Indian artisan communities. Authentic photos, direct enquiry.
+            </p>
+<div class="pt-space-xs flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px] text-tertiary">check_circle</span>
+<span>Direct Artisan Chat</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px] text-secondary">verified_user</span>
+<span>GI Tag Assurance</span>
+</span>
+</div>
+</div>
+<!-- Card 2: Artisan -->
+<div class="relative rounded-xl p-space-md cursor-pointer transition-all bg-surface-container-lowest hover:bg-surface-container-low shadow-sm space-y-space-xs" id="role-card-artisan" onclick="selectRole('artisan')">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">palette</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Sell my crafts</h3>
+<span class="font-label-sm text-label-sm text-secondary">कारीगर / शिल्पी (Artisan)</span>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0" id="check-icon-artisan">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-1 leading-relaxed">
+              Showcase handcrafted heritage pieces, get AI-assisted listing drafts from craft process video, direct buyer enquiries.
+            </p>
+<div class="pt-space-xs flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">mic</span>
+<span>Voice listing support</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[12px]">auto_videocam</span>
+<span>AI Storytelling</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Registration Step Details Input -->
+<div class="mt-space-md pt-space-md space-y-space-md">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-1" for="reg-phone-input">
+<span>Contact Phone (+91)</span>
+<span class="text-error font-semibold">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-primary">Bound: {{form.phoneOrEmail}}</span>
+</div>
+<input class="w-full h-12 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-on-surface-variant/60" id="reg-phone-input" placeholder="Enter phone (+91) or email" type="tel" value="{{form.phoneOrEmail}}"/>
+</div>
+<button class="w-full h-12 rounded-lg bg-primary hover:bg-on-primary-fixed-variant active:scale-[0.99] text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-xs shadow-md transition-all" type="button">
+<span>Proceed with {{register.role}} / आगे बढ़ें</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active User & Languages Datastore Summary Box -->
+<div class="relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">account_circle</span>
+<span class="font-label-md text-label-md font-semibold">User Context &amp; Preferences</span>
+</div>
+<div class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">storage</span>
+<span>DB: users</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-1">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Active Language</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface block mt-0.5">{{user.language}}</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">App Languages</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface block mt-0.5">{{app.languages}}</span>
+</div>
+</div>
+</div>
+<!-- LIFECYCLE VARIANTS DRAWER / PREVIEWS -->
+<div class="relative bg-surface-container rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[18px]">developer_mode</span>
+<h4 class="font-label-lg text-label-lg font-semibold">Lifecycle State Monitors</h4>
+</div>
+<div class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold uppercase">
+          Dynamic States
+        </div>
+</div>
+<!-- State Drawer Items -->
+<div class="space-y-space-sm">
+<!-- 1. Loading State Skeleton -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-primary uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] animate-spin">sync</span>
+<span>Loading State</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Skeleton indicator</span>
+</div>
+<div class="space-y-1.5">
+<div class="h-4 bg-surface-container rounded animate-pulse w-3/4"></div>
+<div class="h-3 bg-surface-container-low rounded animate-pulse w-1/2"></div>
+</div>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm font-mono text-primary">{{loadingMessage}}</span>
+<span class="font-label-sm text-label-sm">Placeholder: Not provided</span>
+</div>
+</div>
+<!-- 2. Error Fallback State -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm shadow-sm space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-error uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>Exception Handler</span>
+</span>
+<div class="px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-label-sm text-label-sm">
+              DB: auth.errors
+            </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Current failure stream: <span class="font-mono text-error font-semibold">{{form.errors}}</span>
+</p>
+<div class="flex items-center justify-end pt-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span>Trigger Sync Retry</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Heritage Trust & Authenticity Footer Note -->
+<div class="py-space-md px-space-sm text-center space-y-1">
+<div class="flex items-center justify-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">Community Verification</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mx-auto leading-relaxed">
+        All craft stories and artisan details are authentic and community-verified.
+      </p>
+<p class="font-label-sm text-label-sm text-on-surface-variant/70 pt-1">
+        No commissions extracted from regional weaver guilds.
+      </p>
+</div>
+</div>
+</div>
+<script>
+  function switchAuthMode(mode) {
+    const signinPanel = document.getElementById('panel-signin');
+    const registerPanel = document.getElementById('panel-register');
+    const btnSignin = document.getElementById('tab-btn-signin');
+    const btnRegister = document.getElementById('tab-btn-register');
+
+    if (mode === 'signin') {
+      signinPanel.classList.remove('hidden');
+      signinPanel.classList.add('block');
+      registerPanel.classList.remove('block');
+      registerPanel.classList.add('hidden');
+
+      btnSignin.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btnSignin.classList.remove('text-on-surface-variant');
+      btnSignin.setAttribute('aria-selected', 'true');
+
+      btnRegister.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btnRegister.classList.add('text-on-surface-variant');
+      btnRegister.setAttribute('aria-selected', 'false');
+    } else {
+      registerPanel.classList.remove('hidden');
+      registerPanel.classList.add('block');
+      signinPanel.classList.remove('block');
+      signinPanel.classList.add('hidden');
+
+      btnRegister.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btnRegister.classList.remove('text-on-surface-variant');
+      btnRegister.setAttribute('aria-selected', 'true');
+
+      btnSignin.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      btnSignin.classList.add('text-on-surface-variant');
+      btnSignin.setAttribute('aria-selected', 'false');
+    }
+  }
+
+  function selectRole(role) {
+    const buyerCard = document.getElementById('role-card-buyer');
+    const artisanCard = document.getElementById('role-card-artisan');
+    const buyerCheck = document.getElementById('check-icon-buyer');
+    const artisanCheck = document.getElementById('check-icon-artisan');
+
+    if (role === 'buyer') {
+      buyerCard.classList.add('bg-surface-container-low');
+      buyerCard.classList.remove('bg-surface-container-lowest');
+      buyerCheck.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span>';
+      buyerCheck.className = 'w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm';
+
+      artisanCard.classList.remove('bg-surface-container-low');
+      artisanCard.classList.add('bg-surface-container-lowest');
+      artisanCheck.innerHTML = '<span class="material-symbols-outlined text-[16px]">add</span>';
+      artisanCheck.className = 'w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0';
+    } else {
+      artisanCard.classList.add('bg-surface-container-low');
+      artisanCard.classList.remove('bg-surface-container-lowest');
+      artisanCheck.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span>';
+      artisanCheck.className = 'w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm';
+
+      buyerCard.classList.remove('bg-surface-container-low');
+      buyerCard.classList.add('bg-surface-container-lowest');
+      buyerCheck.innerHTML = '<span class="material-symbols-outlined text-[16px]">add</span>';
+      buyerCheck.className = 'w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0';
+    }
+  }
+</script></main><script src="../nav_bridge.js"></script></body></html>
