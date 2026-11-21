@@ -10,15 +10,23 @@ const env_1 = require("../config/env");
 const cvOptimizer_1 = require("./cvOptimizer");
 const ffmpeg_1 = require("./ffmpeg");
 class OptimizerClient {
-    static get baseUrl() {
-        return env_1.env.OPTIMIZER_SERVICE_URL.replace(/\/+$/, '');
+    /**
+     * Resolve a target URL against the bound OPTIMIZER_SERVICE_URL environment variable at runtime.
+     * In Vercel services mode, bindings resolve at runtime inside functions.
+     */
+    static getServiceUrl(endpoint) {
+        const rawUrl = process.env.OPTIMIZER_SERVICE_URL || env_1.env.OPTIMIZER_SERVICE_URL || 'http://localhost:8000';
+        const baseUrl = rawUrl.endsWith('/') ? rawUrl : `${rawUrl}/`;
+        const cleanEndpoint = endpoint.replace(/^\/+/, '');
+        return new URL(cleanEndpoint, baseUrl).toString();
     }
     /**
      * Check if Python FastAPI optimizer service is online and healthy
      */
     static async checkHealth() {
         try {
-            const res = await fetch(`${this.baseUrl}/health`, { signal: AbortSignal.timeout(2500) });
+            const url = this.getServiceUrl('health');
+            const res = await fetch(url, { signal: AbortSignal.timeout(2500) });
             if (res.ok) {
                 const data = await res.json();
                 return data.status === 'healthy';
@@ -38,7 +46,8 @@ class OptimizerClient {
         }
         const isOnline = await this.checkHealth();
         if (isOnline) {
-            console.log(`[OptimizerClient] Forwarding video to FastAPI engine: ${this.baseUrl}`);
+            const targetUrl = this.getServiceUrl('api/v1/candidates');
+            console.log(`[OptimizerClient] Forwarding video to FastAPI engine: ${targetUrl}`);
             try {
                 const fileBuffer = fs_1.default.readFileSync(videoFilePath);
                 const filename = path_1.default.basename(videoFilePath);
@@ -59,7 +68,7 @@ class OptimizerClient {
                     formData.append('gamma', String(options.gamma));
                 if (options?.delta)
                     formData.append('delta', String(options.delta));
-                const res = await fetch(`${this.baseUrl}/api/v1/candidates`, {
+                const res = await fetch(targetUrl, {
                     method: 'POST',
                     body: formData
                 });
@@ -77,7 +86,7 @@ class OptimizerClient {
             }
         }
         else {
-            console.warn(`[OptimizerClient] FastAPI service offline at ${this.baseUrl}. Executing local CV engine.`);
+            console.warn(`[OptimizerClient] FastAPI service offline at ${this.getServiceUrl('health')}. Executing local CV engine.`);
         }
         // Graceful fallback: local CV extraction
         return this.runLocalFallbackOptimization(videoFilePath, options?.finalK || 5);
@@ -157,7 +166,8 @@ class OptimizerClient {
     static async getJobStatus(jobId) {
         if (await this.checkHealth()) {
             try {
-                const res = await fetch(`${this.baseUrl}/api/v1/jobs/${jobId}/status`);
+                const url = this.getServiceUrl(`api/v1/jobs/${jobId}/status`);
+                const res = await fetch(url);
                 if (res.ok)
                     return await res.json();
             }
@@ -171,7 +181,8 @@ class OptimizerClient {
     static async getJobCandidates(jobId) {
         if (await this.checkHealth()) {
             try {
-                const res = await fetch(`${this.baseUrl}/api/v1/jobs/${jobId}/candidates`);
+                const url = this.getServiceUrl(`api/v1/jobs/${jobId}/candidates`);
+                const res = await fetch(url);
                 if (res.ok)
                     return await res.json();
             }
@@ -185,7 +196,8 @@ class OptimizerClient {
     static async approveImages(jobId, approvedIndices, heroIndex) {
         if (await this.checkHealth()) {
             try {
-                const res = await fetch(`${this.baseUrl}/api/v1/jobs/${jobId}/approve`, {
+                const url = this.getServiceUrl(`api/v1/jobs/${jobId}/approve`);
+                const res = await fetch(url, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ approved_frame_indices: approvedIndices, hero_frame_index: heroIndex })
@@ -206,7 +218,8 @@ class OptimizerClient {
     static async rejectJob(jobId, reason) {
         if (await this.checkHealth()) {
             try {
-                const res = await fetch(`${this.baseUrl}/api/v1/jobs/${jobId}/reject`, {
+                const url = this.getServiceUrl(`api/v1/jobs/${jobId}/reject`);
+                const res = await fetch(url, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ reason })

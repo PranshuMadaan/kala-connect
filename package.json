@@ -11,7 +11,8 @@
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "ts-node prisma/seed.ts",
-    "test": "ts-node tests/runner.ts"
+    "test": "ts-node tests/runner.ts",
+    "test:e2e": "node tests/run_e2e.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.0",

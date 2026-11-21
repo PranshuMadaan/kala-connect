@@ -2289,7 +2289,7 @@ tailwind.config = {
 // ═══════════════════════════════════════════════════════════════
 
 // ─── Application State & Model ────────────────────────
-const BACKEND_API_URL = window.KALA_BACKEND_URL || 'http://localhost:5000';
+const BACKEND_API_URL = window.KALA_BACKEND_URL || (typeof window !== 'undefined' && window.location.origin && !window.location.origin.startsWith('file:') ? window.location.origin : 'http://localhost:5000');
 let supabaseClient = null;
 
 function getSupabase() {

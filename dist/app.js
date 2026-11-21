@@ -53,6 +53,11 @@ if (fs_1.default.existsSync(pythonArtifactsDir)) {
     app.use('/artifacts', express_1.default.static(pythonArtifactsDir));
 }
 app.use('/artifacts', express_1.default.static(framesDir));
+// Static Frontend Serving for the Artisan Marketplace Web Application
+const frontendDir = path_1.default.resolve(__dirname, '../stitch_kala_connect_artisan_marketplace 2');
+if (fs_1.default.existsSync(frontendDir)) {
+    app.use(express_1.default.static(frontendDir));
+}
 // Health Check Endpoints
 app.get('/health', (req, res) => {
     res.json({
@@ -62,7 +67,7 @@ app.get('/health', (req, res) => {
         timestamp: new Date().toISOString(),
         uptimeSeconds: Math.floor(process.uptime()),
         integrations: {
-            optimizerUrl: env_1.env.OPTIMIZER_SERVICE_URL,
+            optimizerUrl: process.env.OPTIMIZER_SERVICE_URL || env_1.env.OPTIMIZER_SERVICE_URL,
             database: 'SQLite (Prisma)',
             gemini: Boolean(env_1.env.GEMINI_API_KEY)
         }

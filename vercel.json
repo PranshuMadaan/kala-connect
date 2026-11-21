@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "app": {
+      "root": ".",
+      "framework": "express",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "optimizer-service",
+          "format": "url",
+          "env": "OPTIMIZER_SERVICE_URL"
+        }
+      ]
+    },
+    "optimizer-service": {
+      "root": "optimizer-service",
+      "framework": "fastapi"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "app"
+      }
+    },
+    {
+      "source": "/health",
+      "destination": {
+        "service": "app"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "app"
+      }
+    }
+  ]
+}
