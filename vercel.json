@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
+    "frontend": {
+      "root": "stitch_kala_connect_artisan_marketplace 2"
+    },
     "app": {
       "root": ".",
       "framework": "express",
@@ -34,7 +37,7 @@
     {
       "source": "/(.*)",
       "destination": {
-        "service": "app"
+        "service": "frontend"
       }
     }
   ]

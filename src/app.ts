@@ -59,6 +59,28 @@ if (fs.existsSync(frontendDir)) {
   app.use(express.static(frontendDir));
 }
 
+// Root Route Handler (Serves frontend if present, otherwise provides API metadata)
+app.get('/', (req, res) => {
+  const indexFile = path.join(frontendDir, 'index.html');
+  if (fs.existsSync(indexFile)) {
+    return res.sendFile(indexFile);
+  }
+  return res.json({
+    status: 'online',
+    service: 'Kala Connect Production Backend API',
+    version: '2.0.0',
+    message: 'Kala Connect REST API is running. The frontend is hosted at your main Vercel project domain.',
+    documentation: '/api/v1/docs',
+    health: '/health',
+    endpoints: {
+      docs: '/api/v1/docs',
+      health: '/health',
+      products: '/api/v1/buyer/products',
+      pricing: '/api/v1/pricing/benchmarks'
+    }
+  });
+});
+
 // Health Check Endpoints
 app.get('/health', (req, res) => {
   res.json({

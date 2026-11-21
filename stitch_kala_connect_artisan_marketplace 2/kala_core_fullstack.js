@@ -3,7 +3,10 @@
 // Real Supabase Auth, PostgreSQL RLS, Storage, & Gemini AI
 // ═══════════════════════════════════════════════════════════════
 
-const BACKEND_API_URL = window.KALA_BACKEND_URL || (typeof window !== 'undefined' && window.location.origin && !window.location.origin.startsWith('file:') ? window.location.origin : 'http://localhost:5000');
+const BACKEND_API_URL = window.KALA_BACKEND_URL 
+  || (typeof window !== 'undefined' && window.ENV && (window.ENV.BACKEND_API_URL || window.ENV.KALA_BACKEND_URL))
+  || (typeof localStorage !== 'undefined' && localStorage.getItem('kala_backend_url'))
+  || (typeof window !== 'undefined' && window.location.origin && !window.location.origin.startsWith('file:') ? window.location.origin : 'http://localhost:5000');
 
 // ─── Application State ───────────────────────────────────────
 const KALA = {
