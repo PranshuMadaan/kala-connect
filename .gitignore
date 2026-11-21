@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Production Build Output
+dist/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+
+# SQLite Database & Storage
+*.db
+*.db-journal
+dev.db
+dev.db-journal
+
+# Uploads & Generated Media
+uploads/
+optimizer-service/artifacts/
+optimizer-service/uploads/
+optimizer-service/__pycache__/
+
+# Logs & Diagnostics
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vercel Deployment Cache
+.vercel
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

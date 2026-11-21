@@ -18,10 +18,13 @@
   "allowScripts": {
     "@prisma/client": true,
     "@prisma/engines": true,
-    "prisma": true
+    "prisma": true,
+    "@prisma/client@6.19.3": true,
+    "@prisma/engines@6.19.3": true,
+    "prisma@6.19.3": true
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": "^20.0.0 || ^22.0.0"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
@@ -34,6 +37,7 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "prisma": "^6.4.1",
     "zod": "^3.24.2"
   },
   "devDependencies": {
@@ -44,7 +48,6 @@
     "@types/morgan": "^1.9.9",
     "@types/multer": "^1.4.12",
     "@types/node": "^22.13.10",
-    "prisma": "^6.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
   }
